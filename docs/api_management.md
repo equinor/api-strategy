@@ -9,8 +9,11 @@ Functions typically found in API management products include:
  * **Reporting and analytics:** functionality to monitor API usage and load (overall hits, completed transactions, number of data objects returned, amount of compute time and other internal resources consumed, volume of data transferred). This can include real-time monitoring of the API with alerts being raised directly or via a higher-level network management system, for instance, if the load on an API has become too great, as well as functionality to analyse historical data, such as transaction logs, to detect usage trends. Functionality can also be provided to create synthetic transactions that can be used to test the performance and behavior of API endpoints. The information gathered by the reporting and analytics functionality can be used by the API provider to optimize the API offering within an organization's overall continuous improvement process and for defining software Service-Level Agreements for APIs.
  * **Monetization:** functionality to support charging for access to commercial APIs. This functionality can include support for setting up pricing rules, based on usage, load and functionality, issuing invoices and collecting payments including multiple types of credit card payments.
 
-## What does Equinor want to acchieve with an API management tool
+## What does Equinor want to achieve with an API management tool
 
+* **Publishing and discoverability** Central API repository where business partners (external) and internal API consumers can discover and learn how to use existing API's. 
+* **Decoupling** Decouple data and functionality made available via API's from the back-end systems. Back-end locations could be on-prem, in the cloud or both, in principle without affecting the API consumers. 
+* **Governance** Shared functionality for consumer authentication, API subscription handling and possibility to write or declare custom rules such as IP filtering
 
 ## List of popular tools
 ### Open source
