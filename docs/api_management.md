@@ -11,7 +11,8 @@ Functions typically found in API management products include:
 
 ## What does Equinor want to achieve with an API management tool
 
-* **Publishing and discoverability** Central API repository where business partners (external) and internal API consumers can discover and learn how to use existing API's. 
+* **Security** Provide an additional level of security for blocking attacks and prevent misuse, by enforcing security policies and throttling, and providing logging and monitoring functionality.
+* **Developer experience to ensure adoption** Central API repository where business partners (external) and internal API consumers can easily discover, test and learn how to use the APIs, using self-service mechanisms. 
 * **Decoupling** Decouple data and functionality made available via API's from the back-end systems. Back-end locations could be on-prem, in the cloud or both, in principle without affecting the API consumers. 
 * **Governance** Shared functionality for consumer authentication, API subscription handling and possibility to write or declare custom rules such as IP filtering
 
