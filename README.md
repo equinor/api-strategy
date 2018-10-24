@@ -10,3 +10,4 @@ To accelerate this process, CIT via Chief Engineer IT, needs to establish an API
 ## Documents
 * [Mandate](docs/mandate.md)
 * [API Management](docs/api_management.md)
+* [Naming things](docs/naming.md)
