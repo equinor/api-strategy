@@ -8,7 +8,7 @@ These guidlines and conventions are exactly that: guidelines, not rules.
 
 1. Prefer [simple, concise, and intuitive](#simple,-concise,-and-intuitive)
    names
-2. Prefer [lower-case, hyphen-separated] (#lower-case,-hyphen-separated) names
+2. Prefer [lower-case, hyphen-separated](#lower-case,-hyphen-separated) names
 3. Prefer [single-word](#single-word-names) names
 4. Prefer [7-bit ascii](#7-bit-ASCII)
 
