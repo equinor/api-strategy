@@ -6,11 +6,11 @@ These guidlines and conventions are exactly that: guidelines, not rules.
 
 ## Guidelines
 
-1. Prefer [simple, concise, and intuitive](#simple, concise, and intuitive)
+1. Prefer [simple, concise, and intuitive](#simple,-concise,-and-intuitive)
    names
-2. Prefer [lower-case, hyphen-separated] (#lower-case, hyphen-separated) names
-3. Prefer [single-word](#single-word names) names
-4. Prefer [7-bit ascii](7-bit ASCII)
+2. Prefer [lower-case, hyphen-separated] (#lower-case,-hyphen-separated) names
+3. Prefer [single-word](#single-word-names) names
+4. Prefer [7-bit ascii](#7-bit-ASCII)
 
 ## Simple, concise, and intuitive
 
@@ -47,7 +47,7 @@ domain.
 
 ## Lower-case, hyphen-separated
 
-URLs are [case sensitive](#URLs are case sensitive), except for the host
+URLs are [case sensitive](#urls-are-case-sensitive), except for the host
 component, but in practice a lot of systems are still case insensitive (like
 IIS and the Windows file system).
 
@@ -68,7 +68,7 @@ harder to make out different words since there is no horizontal space at all.
 The hyphen (\-) is preferred over the underscore (\_), since the underscore in
 some fonts and renderers is difficult to separate from the whitespace, and
 leaves no room for doubt. The hyphen is well suited as a word separator,
-because it does not have to be [escaped](RFC1738) in an URL.
+because it does not have to be [escaped](#RFC1738) in an URL.
 
 ## Single-word names
 
