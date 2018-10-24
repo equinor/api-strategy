@@ -72,7 +72,7 @@ because it does not have to be [escaped](#RFC1738) in an URL.
 
 ## Single-word names
 
-## 7-bit ascii
+## 7-bit ASCII
 
 While in particular useful for identifiers, prefer pure 7-bit ASCII whenever
 possible, i.e. try and avoid language-specific letters whenever you can. While
