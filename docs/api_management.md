@@ -22,7 +22,9 @@ Functions typically found in API management products include:
 * [APIman](http://www.apiman.io/latest/)
 * [APIUmbrella](https://apiumbrella.io/)
 * [Gravitee](https://gravitee.io/)
+* [Kong Inc.](https://getkong.org/)
 * [KrakenD](https://www.krakend.io/)
+* [Tyk](https://tyk.io/)
 * [WSO2](https://wso2.com/api-management/)
 
 ### Proprietary
@@ -34,7 +36,6 @@ Functions typically found in API management products include:
 * [CA API Management](http://www.ca.com/) (formerly Layer 7, acquired by CA Technologies)
 * [DreamFactory](https://www.dreamfactory.com/)
 * [IBM API Connect](https://apim.ibmcloud.com/)
-* [Kong Inc.](https://getkong.org/)
 * [Microsoft (Azure API Management)](https://azure.microsoft.com/en-us/services/api-management/)
 * [MuleSoft](http://www.mulesoft.com/)
 * [Oracle API Platform Cloud Service](http://www.oracle.com/us/products/middleware/soa/api-management/overview/index.html)
@@ -42,6 +43,5 @@ Functions typically found in API management products include:
 * [Rogue Wave Software](https://www.roguewave.com/products/akana/solutions/api-management) (acquired Akana)
 * [Runscope](https://www.runscope.com/api-monitoring)
 * [Sensedia](https://sensedia.com/en/) (part of CI&T[7])
-* [SmartBear]()
+* [SmartBear](https://smartbear.com/)
 * [TIBCO Mashery](https://www.tibco.com/products/api-management)
-* [Tyk](https://tyk.io/)
