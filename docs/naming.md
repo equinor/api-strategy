@@ -12,6 +12,38 @@ These guidlines and conventions are exactly that: guidelines, not rules.
 3. Prefer [single-word](#single-word-names) names
 4. Prefer [7-bit ascii](#7-bit-ASCII)
 
+## Terminologies
+
+1. `Environment` An environment is uniquely defined by a top-level domain name, such as `api.equinor.com` for production level APIs and `api.dev.equinor.com` for development level. The same API is expected to be deployed in multiple environments, such as `prod` and `dev`. 
+2. `Group`A group of APIs which works with a common resource or have common functionality. A group name can distinguish between services. 
+3. `Version` Alphanumeric value with a "v" prefix, such as "v1", "v2", "v1alpha1", "v2beta1"
+4. `Resource` Name of the endpoint which follows the **Resource naming** conventions below.  
+
+The URL of a public API should be defined as the following:
+
+https://`Environment`/`Group`/`Version`/`Resource`
+
+Examples based on the above terminologies followed:
+
+| Environment         | Group          | Resource               | Version | Full URL                                          | Description                                       |
+| ------------------- | -------------- | ---------------------- | ------- | ------------------------------------------------- | ------------------------------------------------- |
+| api.prod.equinor.com| coredb         | wells/{wellid}         | v1      | api.prod.equinor.com/coredb/v1/wells              | CoreDB API for wells in prod environment          |
+| api.dev.equinor.com | qrp            | sharp2/background-data | v2      | api.dev.equinor.com/qrp/v2/sharp2/background-data | QRP API for background data in dev environment.   |
+
+##### Resource naming
+
+A resource name should clearly indicate the cardinality by using plural nouns for collections, and an instance id for a member of that collection. For example, to get info on well 1234:
+
+```http
+GET .../wells/1234
+```
+
+If a relation can only exist within another resource, then append the sub resources to the path. For example: since a well can have multiple well logs, the URL to get a ROHB log for 1234 would appear as follows:
+
+```http
+GET .../wells/1234/logs/rohb
+```https://github.com/Qif-Equinor/api-strategy.git
+
 ## Simple, concise, and intuitive
 
 Simple and concise names are easy to remember, easy to talk about, and aid
