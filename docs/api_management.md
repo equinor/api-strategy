@@ -21,9 +21,11 @@ Functions typically found in API management products include:
 * [APIAxle](http://apiaxle.com/)
 * [APIman](http://www.apiman.io/latest/)
 * [APIUmbrella](https://apiumbrella.io/)
+* [Connexion](https://github.com/zalando/connexion)
 * [Gravitee](https://gravitee.io/)
 * [Kong Inc.](https://getkong.org/)
 * [KrakenD](https://www.krakend.io/)
+* [Swagger](https://swagger.io/)
 * [Tyk](https://tyk.io/)
 * [WSO2](https://wso2.com/api-management/)
 
