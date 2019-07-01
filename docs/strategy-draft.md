@@ -1,7 +1,7 @@
 # Equinor API Strategy - DRAFT
 
 ## Introduction
-(mer introtekst)
+Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services and enables the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation and faster development of digital products and new business models. With the recently released TR1621 v7, Equinor is heading towards an "API first strategy". Meaning software components should offer APIs to communicate with other components, share data , functions etc.
 
 The Equinor API Strategy outlines the direction for management, design and development of APIs in Equinor.
 
@@ -10,7 +10,7 @@ This document distinguish between 4 categories of APIs, based on target audience
 
 ## Goals
 
-The goal of the Equinor API strategy is to deliver a number of operational and strategic benefits:
+The goal of the API Strategy is to deliver a number of operational and strategic benefits to Equinor:
 
 - **Increased efficiency in software development.** Getting access to data, often from another team or part of the organization, can be a time consuming process for development teams. In many cases, the consumers of these data need to do similar processing. By being able to reuse existing APIs providing data and processing capabilities - rather than building from scratch - development teams can develop new applications faster.
 - **Increased agility in software architecture**. By building our applications on top of APIs and applying [microservice architecture principles](https://martinfowler.com/articles/microservices.html) we can create a more agile software architecture, making our software systems more adaptable to change. An agile architecture will in turn support the business becoming more agile.
@@ -147,7 +147,7 @@ In this document we distinguish between 4 API categories
 | Partner | Partner APIs are available to selected business partners |
 | Public | Public APIs are publicly available on the Internet |
 
-## References
+## References & useful links
 
 ### OpenAPI Specification
 - [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/)
