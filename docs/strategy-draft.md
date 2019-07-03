@@ -1,7 +1,7 @@
 # Equinor API Strategy - DRAFT
 
 ## Introduction
-(mer introtekst)
+Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services and enables the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation and faster development of digital products and new business models. With the recently released TR1621 v7, Equinor is heading towards an "API first strategy". Meaning software components should offer APIs to communicate with other components, share data , functions etc.
 
 The Equinor API Strategy outlines the direction for management, design and development of APIs in Equinor.
 
@@ -10,17 +10,7 @@ This document distinguish between 4 categories of APIs, based on target audience
 
 ## Goals
 
-The goal of the Equinor API Strategy is to establish an **API platform** exposing a significant part of Equinor data and functionality through APIs. Key characteristics of the API platform:
-
-- **Well crafted, secure APIs.** The APIs in the platform should be crafted according to industry standards with high emphasis on security.
-- **API discoverability.** Which APIs exists in the platform and what capabilities they have should be easy to discover for API consumers.
-- **Developer experience (DX).** The user experience for developers (a.k.a. developer experience) that develops API clients is key for adoption of the APIs. A good DX requires a well designed APIs, API documentation, self-service based access, useful error messages, predictability in operations, etc.
-
-
-(Ha med et "short term goal" om awareness & competence?) 
-
-### Effects
-The API Platform can give Equinor a number of benefits:
+The goal of the API Strategy is to deliver a number of operational and strategic benefits to Equinor:
 
 - **Increased efficiency in software development.** Getting access to data, often from another team or part of the organization, can be a time consuming process for development teams. In many cases, the consumers of these data need to do similar processing. By being able to reuse existing APIs providing data and processing capabilities - rather than building from scratch - development teams can develop new applications faster.
 - **Increased agility in software architecture**. By building our applications on top of APIs and applying [microservice architecture principles](https://martinfowler.com/articles/microservices.html) we can create a more agile software architecture, making our software systems more adaptable to change. An agile architecture will in turn support the business becoming more agile.
@@ -28,6 +18,14 @@ The API Platform can give Equinor a number of benefits:
 - **Enabler for Innovation** The availability of and easy access to a broad range of data and functionality can facilitate innovation. By combining data in new ways we can potentially gain new insights and build new services that brings added value to the company. The API Platform can enable innovation internally on our private APIs, but possibly also on public APIs by external parties (without direct investment by Equinor).
 - **New business opportunities.** A number of businesses are getting significant income from the "API Economy". A common model of operation is to offer public APIs where the clients pay for consumption (as subscription or pr request). Another approach is to offer free public APIs where clients indirectly contributes to revenue by growing an existing business platform or ecosystem. Providing APIs to selected business is a third approach where new (or existing) business relationships is strengthened by API integration.
 
+
+## API Platform
+
+To reach the goals of the API Strategy, Equinor will establish an **API platform** exposing a significant part of Equinor data and functionality through APIs. Key characteristics of the API platform:
+
+- **Well crafted, secure APIs.** The APIs in the platform should be crafted according to industry standards with high emphasis on security.
+- **API discoverability.** Which APIs exists in the platform and what capabilities they have should be easy to discover for API consumers.
+- **Developer experience (DX).** The user experience for developers (a.k.a. developer experience) that develops API clients is key for adoption of the APIs. A good DX requires a well designed APIs, API documentation, self-service based access, useful error messages, predictability in operations, etc.
 
 
 ## API Management Tools and roles
@@ -149,7 +147,7 @@ In this document we distinguish between 4 API categories
 | Partner | Partner APIs are available to selected business partners |
 | Public | Public APIs are publicly available on the Internet |
 
-## References
+## References & useful links
 
 ### OpenAPI Specification
 - [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/)
