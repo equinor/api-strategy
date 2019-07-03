@@ -116,7 +116,7 @@ APIs should only be _limited_ if it contains necessary optimizations that makes 
 
 
 ### Consistency
-To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor. In some (few) cases, where a different approach has significant benefits, protocols like AMQP/MQTT, WebSockets and OPC UA may be used. These protocols are neither supported by the OpenAPI specification, nor by our API portal & gateway tools, and should only be used for limited APIs.
+To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor. In some cases, where a different approach has significant benefits, protocols like AMQP/MQTT, WebSockets and OPC UA may be used. These protocols are neither supported by the OpenAPI specification, nor by our API portal & gateway tools, and should only be used for limited APIs.
 
 
 ### REST
