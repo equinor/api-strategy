@@ -1,9 +1,9 @@
 # Equinor API Strategy - DRAFT
 
 ## Introduction
-Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services and enables the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation and faster development of digital products and new business models. With the recently released TR1621 v7, Equinor is heading towards an "API first strategy". Meaning software components should offer APIs to communicate with other components, share data , functions etc.
+Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services and enables the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation, faster development of digital products and new business models. This can positively affect the profitability of the company, a concept referred to in the industry as _the API Economy_. 
 
-The Equinor API Strategy outlines the direction for management, design and development of APIs in Equinor.
+With the latest version of TR1621 (v7), Equinor is heading towards an "API first strategy". Software components should offer APIs to communicate with other components, share data and functionality. To further capitalize on the potentials of the API Economy, Equinor is establishing an API Strategy. The API strategy outlines the direction for management, design and development of APIs in Equinor.
 
 This document distinguish between 4 categories of APIs, based on target audience; _limited_, _private_, _partner_ and _public_. See the [Definitions](#api-categories) section for a description of each category.
 
@@ -116,7 +116,7 @@ APIs should only be _limited_ if it contains necessary optimizations that makes 
 
 
 ### Consistency
-To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor. In some (few) cases, where a different approach has significant benefits, protocols like AMQP/MQTT, WebSockets and OPC UA may be used. These protocols are neither supported by the OpenAPI specification, nor by our API portal & gateway tools, and should only be used for limited APIs.
+To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor. In some cases, where a different approach has significant benefits, protocols like AMQP/MQTT, WebSockets and OPC UA may be used. These protocols are neither supported by the OpenAPI specification, nor by our API portal & gateway tools, and should only be used for limited APIs.
 
 
 ### REST
