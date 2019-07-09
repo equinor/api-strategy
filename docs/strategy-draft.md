@@ -5,7 +5,7 @@ Application programming interfaces (APIs) are a core element of any digital busi
 
 With the latest version of TR1621 (v7), Equinor is heading towards an "API first strategy". Software components should offer APIs to communicate with other components, share data and functionality. To further capitalize on the potentials of the API Economy, Equinor is establishing an API Strategy. The API strategy outlines the direction for management, design and development of APIs in Equinor.
 
-This document distinguish between 4 categories of APIs, based on target audience; _limited_, _private_, _partner_ and _public_. See the [Definitions](#api-categories) section for a description of each category.
+This document distinguish between 4 categories of APIs, based on target audience; _app-private_, _private_, _partner_ and _public_. See the [Definitions](#api-categories) section for a description of each category.
 
 
 ## Goals
@@ -43,10 +43,10 @@ Key characteristics:
 - Provides self service mechanisms for API client developers to gain access to APIs
 - _All_ private and public APIs shall be listed in the API Portal. Limited and partner APIs may be listed if needed.
 - Provides configurable visibility of APIs
-  - Limited APIs - if listed in the API portal - should only be visible to relevant client developers
+  - App-private APIs - if listed in the API portal - should only be visible to relevant client developers
   - Private APIs should be visible to everyone in Equinor (i.e. to all users in Equinor AD)
   - Partner APIs may have public or limited visibility, depending on the need for the particular API 
-  - Public APIs should be visible to everyone internal and externally
+  - Public APIs should be visible to everyone internally and externally
   
 
 The API portal should provide the following information about each API:
@@ -110,7 +110,7 @@ Key elements in the API as a product principle:
 #### Be prepared to externalize
 Assuming your API will forever remain within the current scope can limit the potential of the API. In many cases APIs are initially developed for a particular client. Because there is (currently) only one client, API developers might be tempted to lower the standards for the API, and go easy on design, specification, documentation, etc. Then, when other parties are interested, there might be a backlog of things to improve before new clients can start consuming. Similarly, with a particular client in mind, the API could easily be designed with unnecessary optimizations making it less suited for other clients.
 
-With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening a limited API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
+With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening a app-private API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
 
 APIs should only be _limited_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being private (and visible to everyone in the company). 
 
@@ -142,8 +142,8 @@ In this document we distinguish between 4 API categories
 
 | Term | Description |
 | :--- | :--- |
-| Limited | Limited APIs are available to a limited set of clients within the company. Typically optimized for a particular consumer, like a web or mobile client. |
-| Private | Private APIs are available to clients within the company |
+| App-private | app-private APIs are available to a limited set of clients, within the same functional scope. These APIs are typically optimized for a particular consumer, like a web or mobile client. app-private APIs are sometimes referred to as _application-private_ or _app-internal_ APIs.|
+| Private | Private APIs are available to clients within the company. Private APIs are sometimes referred to as _internal_ APIs. |
 | Partner | Partner APIs are available to selected business partners |
 | Public | Public APIs are publicly available on the Internet |
 
