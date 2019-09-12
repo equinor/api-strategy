@@ -1,10 +1,144 @@
 # API Strategy - Naming conventions and guidelines
 
-## Context
+This document is split into 2 parts:
 
-These guidlines and conventions are exactly that: guidelines, not rules.
+* [APIM / API Naming Standards](#APIM-and-API-Naming-Standards)
+* [General Guidelines](#General-Guidelines)
 
-## Guidelines
+## APIM and API Naming Standards (draft)
+
+To ensure consistency, naming of API’s should be aligned with the overall
+Equinor Data Architecture guidelines and thus make use of 
+[Data Areas](https://eita.equinor.com/companyea/) as a basis for naming. 
+The use of organisational units, project names and obscure abbreviations is 
+strongly discouraged. 
+
+The following conventions are used below: 
+
+* [] Indicates an optional argument
+* | Indicates one of several options 
+* L1, L2, L3 refer to the names of the different levels within the EITA Data 
+  Areas list.  
+* For data area names you can drop ‘Data’ and other stop words like (and,or, ..)
+  from such naming if included e.g. Well Data -> Well
+
+### API Naming standards (applies to APIM and API) 
+
+#### API name:  Unique identity for each API  
+
+The API name should be short and descriptive. It will be used in referring the 
+API in APIM and API documentation 
+
+Naming should be in the form below, use CamelCasing and with levels separated by 
+'-'.
+
+```
+[L1-L2-L3] 
+```
+
+e.g. `OperationMaintenance-SafeWork-WorkPermit`
+
+If the API is very project specific, needs further grouping, or contains only a 
+subset of the functionality within a specific data area then naming might be: 
+
+```
+[L1-L2-L3] Custom Name | Function 
+```
+
+#### Endpoints (hierarchy) 
+
+The endpoint is what is visible in the url to those consuming the service. 
+
+Naming should be in the form below, in lowercase and with levels separated by 
+'-'.
+
+```
+L1/L2/L3 
+```
+e.g. `operation-maintenance/safe-work/work-permit`
+
+As a fallback if the API is very project specific, needs further grouping, or 
+contains only a subset of the functionality within a specific data area naming 
+might be: 
+
+```
+[L1/L2/L3] Custom Name | Function 
+```
+
+e.g. `operation-maintenance/safe-work/work-permit/organization-data`
+ 
+#### Operations - Operation is specific to Function  
+
+There are two types of operations: collection operations and item operations. 
+
+* *Collection* operations act on a collection of resources 
+* *Item* operations act on an individual resource.  
+
+Both collection and item operations should use plural in naming    
+
+e.g. `work-permits`
+
+e.g. (plural): `https://api.example.com/operation-maintenance/safe-work/work-permits`
+
+e.g. (Singular): `https://api.example.com/operation-maintenance/safe-work/work-permits/id`
+
+#### Data Model 
+
+The data model used for interacting with the service should where possible 
+adopt the following guidelines.
+
+* Use standard data structures.
+* Use standard data formats / models.
+* Use English words for markup.
+
+### APIM Specific 
+
+#### Display name 
+
+The APIM display name is used to discover APIs using APIM developer portal.   
+
+The display name should follow the same standard as defined for API naming above
+however rather than using CamelCase, spaces can be used to separate words and 
+‘|’ to separate data areas: 
+
+e.g. `Operation and Maintenance | Safe Work | Work Permit`
+
+#### Products 
+
+APIM products are used for grouping of API’s on the bases of visibility and 
+access control. A single API can be contained within multiple products. 
+
+e.g.
+
+`L1/ L2/ Custom Name - Internal`<br />
+`L1/ L2/ Custom Name - Open`<br />
+`L1/ L2/ Custom Name - Restricted`
+
+A product description must be provided that indicates the target group of the 
+product and describes any abbreviations used.  
+
+#### Tags  
+
+APIM Tags are used to allow for grouping and discovery of API’s by custom tags 
+
+Multiple tags should be assigned to API's for each of the different data areas
+including:  
+
+* L1
+* L2
+* L3
+* Project Name
+* Function, Custom 
+
+### Other Recommendations 
+
+* Use forward slash (/) to indicate a hierarchical relationship 
+* Do not use trailing forward slash (/) in URIs 
+* Do not use file extensions 
+
+## General Guidelines
+
+These general guidlines and conventions are exactly that: guidelines, not rules.
 
 1. Prefer [simple, concise, and intuitive](#simple,-concise,-and-intuitive)
    names
