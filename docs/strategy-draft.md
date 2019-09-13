@@ -41,7 +41,7 @@ The API Portal is the central API registry, and the main tool to achieve _API di
 Key characteristics:
 
 - Provides self service mechanisms for API client developers to gain access to APIs
-- _All_ private and public APIs shall be listed in the API Portal. Limited and partner APIs may be listed if needed.
+- _All_ private and public APIs shall be listed in the API Portal. App-private and partner APIs may be listed if needed.
 - Provides configurable visibility of APIs
   - App-private APIs - if listed in the API portal - should only be visible to relevant client developers
   - Private APIs should be visible to everyone in Equinor (i.e. to all users in Equinor AD)
@@ -112,7 +112,7 @@ Assuming your API will forever remain within the current scope can limit the pot
 
 With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening an app-private API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
 
-APIs should only be _limited_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being private (and visible to everyone in the company). 
+APIs should only be _app-private_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being private (and visible to everyone in the company). 
 
 
 ### Consistency
