@@ -5,7 +5,7 @@ Application programming interfaces (APIs) are a core element of any digital busi
 
 With the latest version of TR1621 (v7), Equinor is heading in an "API first" direction; software components should offer APIs to communicate with other components, share data and functionality. To further capitalize on the potentials of the API Economy, Equinor is establishing an API Strategy. The API strategy outlines the direction for management, design and development of APIs in Equinor.
 
-This document distinguish between 4 categories of APIs, based on target audience; _app-private_, _private_, _partner_ and _public_. See the [Definitions](#api-categories) section for a description of each category.
+This document distinguish between 4 categories of APIs, based on target audience; _app-private_, _private_, _partner_ and _public_. See the [Appendix](#api-categories) for a description of each category.
 
 
 ## Goals
@@ -110,7 +110,7 @@ Key elements in the API as a product principle:
 #### Be prepared to externalize
 Assuming your API will forever remain within the current scope can limit the potential of the API. In many cases APIs are initially developed for a particular client. Because there is (currently) only one client, API developers might be tempted to lower the standards for the API, and go easy on design, specification, documentation, etc. Then, when other parties are interested, there might be a backlog of things to improve before new clients can start consuming. Similarly, with a particular client in mind, the API could easily be designed with unnecessary optimizations making it less suited for other clients.
 
-With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening a app-private API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
+With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening an app-private API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
 
 APIs should only be _limited_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being private (and visible to everyone in the company). 
 
@@ -120,22 +120,24 @@ To facilitate API adoption and make it easier to do reviews between teams follow
 
 
 ### REST
-REST in the preferred API style in the API platform. RESTful APIs should be created with a minimum of [REST Maturity Level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2). In essence, maturity level 2 means:
 
-- HTTP as transport protocol
+REST in the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a brief explanation of the concept of REST.
+
+APIs should be created with a minimum of [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2). In essence, maturity level 2 means:
+
+- HTTP(S) as transport protocol
 - APIs are modeled around resources (not actions). A resource is a part of the application's domain model.
-- Use HTTP actions. Verbs in URLs are not allowed.
+- Use HTTP actions (GET, PUT, POST, DELETE, etc). Verbs in URLs are not allowed.
+- Use standard HTTP status codes
 
 All REST APIs should be specified with [OpenAPI specification](https://swagger.io/specification/).
 
-The API strategy does not contain detailed guidelines for how to create REST APIs. Recommended links to REST guidelines:
+Further reading on REST:
 
 - [Microsoft Azure REST design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-- [8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
-- [Zalando API Guidelines](https://opensource.zalando.com/restful-api-guidelines)
-- [Roy Fielding Dissertation - Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+- [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
 
-## Definitions
+## Appendix
 ### <a name="api-categories"></a>API Categories
 In this document we distinguish between 4 API categories
 
@@ -146,6 +148,25 @@ In this document we distinguish between 4 API categories
 | Private | Private APIs are available to clients within the company. Private APIs are sometimes referred to as _internal_ APIs. |
 | Partner | Partner APIs are available to selected business partners |
 | Public | Public APIs are publicly available on the Internet |
+
+### <a name="what-is-rest"></a>What is REST?
+Representational state transfer (REST) is an architecture style for web APIs, defined by Roy Fielding in year 2000 in his ([doctoral dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)). REST defines a set of architectural constraints, as listed below. APIs operating within these constraints are called RESTful APIs.
+
+- [Client-server architecture](https://en.wikipedia.org/wiki/Representational_state_transfer#Client-server_architecture)
+- [Statelessness](https://en.wikipedia.org/wiki/Representational_state_transfer#Statelessness)
+- [Cacheability](https://en.wikipedia.org/wiki/Representational_state_transfer#Cacheability)
+- [Uniform interface](https://en.wikipedia.org/wiki/Representational_state_transfer#Uniform_interface)
+- [Layered system](https://en.wikipedia.org/wiki/Representational_state_transfer#Layered_system)
+- [Code on demand (optional)](https://en.wikipedia.org/wiki/Representational_state_transfer#Code_on_demand_(optional))
+
+The REST constraints does not contain technical specifications, like transport protocol, data formats, etc. Consequently, there is no official technical standard for RESTful APIs. However, since its creation in 2000, industry standard conventions have emerged, particularly regarding the usage of HTTP.
+
+Although Roy Fielding emphasizes that APIs need to adhere to _all_ of the REST constraints to be called RESTful, few actually do so. Particularly the concept of "Hypermedia as the engine of application state" (HATEOAS), which is part of the "Uniform interface" constraint, is rarely implemented. This principle is somewhat controversial, and seen by many as adding complexity without giving real value (e.g. [Why I Hate HATEOAS](https://jeffknupp.com/blog/2014/06/03/why-i-hate-hateoas/)). 
+
+The lack of a precise definition and the lack of consensus around the HATEOAS principle can be a source of confusion. Fortunately, the [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) brings clarity by breaking down the principles of REST and taking the industry conventions into account. [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2) has become the de facto standard for RESTful APIs. 
+
+Note that maturity level 2 is not strictly "RESTful" according to Fielding's definition, but we use this term for level 2 APIs as this is common practice in the industry.
+
 
 ## References & useful links
 
@@ -163,6 +184,5 @@ In this document we distinguish between 4 API categories
 ### Blogs & blog posts
 - [Nordic APIs](https://nordicapis.com/)
 - [API Evangelist](http://apievangelist.com/)
-- [8 Tips For Designing Quality REST APIs (Nordic APIs)](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
 - [API Design - The guidelines (Hacker Noon)](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)
 
