@@ -35,7 +35,7 @@ API Management tools are key to supporting a secure and effective API developmen
 ![alt text](images/API-C4.png "API Landscape")
 
 
-### API Portal
+### <a name="api-portal"></a>API Portal
 The API Portal is the central API registry, and the main tool to achieve _API discoverability_. The Equinor API portal is available at <https://api.equinor.com> and is implemented on top of [Microsoft Azure API Management](https://azure.microsoft.com/en-us/services/api-management). 
 
 Key characteristics:
@@ -57,7 +57,7 @@ The API portal should provide the following information about each API:
 - Links to Terms of Service and SLA for the API, if such documents exists
  
 
-### API Gateway
+### <a name="api-gateway"></a>API Gateway
 The API Gateway provides key security, bridging and monitoring features. Equinor uses [Microsoft Azure API Management](https://azure.microsoft.com/en-us/services/api-management) as API Gateway. APIs exposed through the API Gateway will be available at a subURL of `api.equinor.com`. Azure API Management provides the following key features:
 
 - Security features like throttling and IP restrictions, JWT token validation, HTTP header validation
@@ -116,12 +116,12 @@ APIs should only be _app-private_ if it contains necessary optimizations that ma
 
 
 ### Consistency
-To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference.
+To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. [REST](#rest) is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference.
 
-Other protocols like AMQP, MQTT and GraphQL may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our API portal & gateway tools, and are best suited for app-private APIs.
+Other protocols like AMQP, MQTT and GraphQL may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our [API portal](#api-portal) & [API gateway](#api-gateway), and are best suited for app-private APIs.
 
 
-### REST
+### <a name="rest"></a>REST
 
 REST in the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a brief explanation of the concept of REST.
 
@@ -132,12 +132,7 @@ APIs should be created with a minimum of [REST maturity level 2](http://martinfo
 - Use HTTP actions (GET, PUT, POST, DELETE, etc). Verbs in URLs are not allowed.
 - Use standard HTTP status codes
 
-All REST APIs should be specified with [OpenAPI specification](https://swagger.io/specification/).
-
-Further reading on REST:
-
-- [Microsoft Azure REST design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-- [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
+All RESTful APIs should be specified with [OpenAPI specification](https://swagger.io/specification/).
 
 
 ### <a name="opc-ua"></a>OPC UA
@@ -158,7 +153,7 @@ In this document we distinguish between 4 API categories
 | Public | Public APIs are publicly available on the Internet |
 
 ### <a name="what-is-rest"></a>What is REST?
-Representational state transfer (REST) is an architecture style for web APIs, defined by Roy Fielding in year 2000 in his ([doctoral dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)). REST defines a set of architectural constraints, as listed below. APIs operating within these constraints are called RESTful APIs.
+Representational state transfer (REST) is an architecture style for web APIs, defined by Roy Fielding in year 2000 in his [doctoral dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm). REST defines a set of architectural constraints, as listed below. APIs operating within these constraints are called RESTful APIs.
 
 - [Client-server architecture](https://en.wikipedia.org/wiki/Representational_state_transfer#Client-server_architecture)
 - [Statelessness](https://en.wikipedia.org/wiki/Representational_state_transfer#Statelessness)
@@ -174,6 +169,11 @@ Although Roy Fielding emphasizes that APIs need to adhere to _all_ of the REST c
 The lack of a precise definition and the lack of consensus around the HATEOAS principle can be a source of confusion. Fortunately, the [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) brings clarity by breaking down the principles of REST and taking the industry conventions into account. [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2) has become the de facto standard for RESTful APIs. 
 
 Note that maturity level 2 is not strictly "RESTful" according to Fielding's definition, but we use this term for level 2 APIs as this is common practice in the industry.
+
+Further reading on REST:
+
+- [Microsoft Azure REST design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+- [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
 
 
 ## References & useful links
