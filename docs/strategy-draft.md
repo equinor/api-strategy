@@ -116,7 +116,9 @@ APIs should only be _limited_ if it contains necessary optimizations that makes 
 
 
 ### Consistency
-To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor. In some cases, where a different approach has significant benefits, protocols like AMQP/MQTT, WebSockets and OPC UA may be used. These protocols are neither supported by the OpenAPI specification, nor by our API portal & gateway tools, and should only be used for limited APIs.
+To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. _RESTful APIs_ is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference.
+
+Other protocols like AMQP, MQTT and GraphQL may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our API portal & gateway tools, and are best suited for app-private APIs.
 
 
 ### REST
@@ -136,6 +138,12 @@ Further reading on REST:
 
 - [Microsoft Azure REST design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
 - [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
+
+
+### <a name="opc-ua"></a>OPC UA
+OPC Unified Architecture (OPC UA, IEC 62541) is an open interoperability standard for secure and reliable exchange of data in industrial automation. The standard defines interface that includes access to real-time data, monitoring of alarms and events, access to historical data and other applications. 
+
+OPC UA is the preferred connectivity framework within industrial automation in Equinor, and will also be used to connect and integrate industrial automation and control systems (OT) with enterprise systems, business processes and analytics (IT).
 
 ## Appendix
 ### <a name="api-categories"></a>API Categories
