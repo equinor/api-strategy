@@ -136,9 +136,14 @@ All RESTful APIs should be specified with [OpenAPI specification](https://swagge
 
 
 ### <a name="opc-ua"></a>OPC UA
-OPC Unified Architecture (OPC UA, IEC 62541) is an open interoperability standard for secure and reliable exchange of data in industrial automation. The standard defines interface that includes access to real-time data, monitoring of alarms and events, access to historical data and other applications. 
+[OPC](https://opcfoundation.org/about/what-is-opc/) Unified Architecture ([OPC UA](https://opcfoundation.org/about/opc-technologies/opc-ua/) / IEC 62541) is an open interoperability standard for secure and reliable exchange of data in industrial automation / OT.  The standard defines interface that includes access to real-time data, monitoring of alarms and events, access to historical data and other applications.
 
 OPC UA is the preferred connectivity framework within industrial automation in Equinor, and will also be used to connect and integrate industrial automation and control systems (OT) with enterprise systems, business processes and analytics (IT).
+
+Further readings:
+
+- [OPA UA explained in 1 minute (movie)](https://www.youtube.com/watch?v=-tDGzwsBokY)
+- [Industrial Internet Vocabulary](https://www.iiconsortium.org/vocab/index.htm)
 
 ## Appendix
 ### <a name="api-categories"></a>API Categories
