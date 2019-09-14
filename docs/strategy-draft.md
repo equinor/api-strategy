@@ -41,13 +41,12 @@ The API Portal is the central API registry, and the main tool to achieve _API di
 Key characteristics:
 
 - Provides self service mechanisms for API client developers to gain access to APIs
-- _All_ private and public APIs shall be listed in the API Portal. App-private and partner APIs may be listed if needed.
-- Provides configurable visibility of APIs
+- _All_ private and public APIs shall be published in the API Portal. App-private and partner APIs may be published if needed.
+- Provides configurable _visibility_ of APIs
   - App-private APIs - if listed in the API portal - should only be visible to relevant client developers
   - Private APIs should be visible to everyone in Equinor (i.e. to all users in Equinor AD)
   - Partner APIs may have public or limited visibility, depending on the need for the particular API 
   - Public APIs should be visible to everyone internally and externally
-  
 
 The API portal should provide the following information about each API:
   
@@ -55,7 +54,7 @@ The API portal should provide the following information about each API:
 - Downloadable [OpenAPI specification](https://swagger.io/specification/)
 - Access requirements, including information about how to apply for access
 - Links to Terms of Service and SLA for the API, if such documents exists
- 
+
 
 ### <a name="api-gateway"></a>API Gateway
 The API Gateway provides key security, bridging and monitoring features. Equinor uses [Microsoft Azure API Management](https://azure.microsoft.com/en-us/services/api-management) as API Gateway. APIs exposed through the API Gateway will be available at a subURL of `api.equinor.com`. Azure API Management provides the following key features:
