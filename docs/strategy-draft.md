@@ -8,7 +8,31 @@ With the latest version of TR1621 (v7), Equinor is heading in an "API first" dir
 This document distinguish between 4 categories of APIs, based on target audience; _app-private_, _private_, _partner_ and _public_. See the [Appendix](#api-categories) for a description of each category.
 
 
-## Goals
+# Table Of Contents
+
+* [Goals](#goals)
+* [API Platform](#api-platform)
+* [API Management Tools and roles](#api-management)
+    * [API Portal](#api-portal)
+    * [API Gateway](#api-gateway) 
+    * [API developer](#api-developer)
+    * [API client developer](#api-client-developer)
+    * [End user](#end-user)
+* [API Design](#api-design)
+    * [Design Principles](#design-principles)
+        * [API First](#api-first)
+        * [API AS a Product](#api-as-a-product)
+        * [Be prepared to externalize](#externalize)
+    * [Consistency](#consistency)
+    * [REST](#rest)
+    * [OPC UA](#opc-ua)
+* [Appendix](#appendix)
+    * [API Categories](#api-categories)
+    * [What is REST?](#what-is-rest)
+* [References & useful links](#references)
+
+
+## <a id="goals"></a>Goals
 
 The goal of the API Strategy is to deliver a number of operational and strategic benefits to Equinor:
 
@@ -19,7 +43,7 @@ The goal of the API Strategy is to deliver a number of operational and strategic
 - **New business opportunities.** A number of businesses are getting significant income from the "API Economy". A common model of operation is to offer public APIs where the clients pay for consumption (as subscription or pr request). Another approach is to offer free public APIs where clients indirectly contributes to revenue by growing an existing business platform or ecosystem. Providing APIs to selected business is a third approach where new (or existing) business relationships is strengthened by API integration.
 
 
-## API Platform
+## <a id="api-platform"></a>API Platform
 
 To reach the goals of the API Strategy, Equinor will establish an **API platform** exposing a significant part of Equinor data and functionality through APIs. Key characteristics of the API platform:
 
@@ -28,14 +52,14 @@ To reach the goals of the API Strategy, Equinor will establish an **API platform
 - **Developer experience (DX).** The user experience for developers (a.k.a. developer experience) that develops API clients is key for adoption of the APIs. A good DX requires a well designed APIs, API documentation, self-service based access, useful error messages, predictability in operations, etc.
 
 
-## API Management Tools and roles
+## <a id="api-management"></a>API Management Tools and roles
 
 API Management tools are key to supporting a secure and effective API development process and reaching the goals of the API Strategy. The figure below describes how these tools fits into the system context of a typical private or public API, including interacting roles.
 
 ![alt text](images/API-C4.png "API Landscape")
 
 
-### <a name="api-portal"></a>API Portal
+### <a id="api-portal"></a>API Portal
 The API Portal is the central API registry, and the main tool to achieve _API discoverability_. The Equinor API portal is available at <https://api.equinor.com> and is implemented on top of [Microsoft Azure API Management](https://azure.microsoft.com/en-us/services/api-management). 
 
 Key characteristics:
@@ -56,7 +80,7 @@ The API portal should provide the following information about each API:
 - Links to Terms of Service and SLA for the API, if such documents exists
 
 
-### <a name="api-gateway"></a>API Gateway
+### <a id="api-gateway"></a>API Gateway
 The API Gateway provides key security, bridging and monitoring features. Equinor uses [Microsoft Azure API Management](https://azure.microsoft.com/en-us/services/api-management) as API Gateway. APIs exposed through the API Gateway will be available at a subURL of `api.equinor.com`. Azure API Management provides the following key features:
 
 - Security features like throttling and IP restrictions, JWT token validation, HTTP header validation
@@ -65,26 +89,28 @@ The API Gateway provides key security, bridging and monitoring features. Equinor
 - Monitoring
 - Access to APIs on the on-prem network through Azure ExpressRoute
   
-
 The figure above also describes the interaction between API management tools and key roles. Please note that the developer roles represent personas/stereotypes, and will generally be the responsibility of a software DevOps team.
 
 
-### API developer
+### <a id="api-developer"></a>API developer
 The API developer creates the API on top of a backend system, and mange the API through its lifecycle. The API developer deploys the API to the API Gateway and API Portal. The API developer is responsible for ensuring that the API is well crafted, secure and properly documented.  Other things the API developer needs to consider; versioning strategy, should an SLA and/or Terms of Service be created, how to receive feedback from API client developers, etc.
 
-### API client developer
+
+### <a id="api-client-developer"></a>API client developer
 This is the developer of an App that consumes the API. The API client developer will use the API portal to discover the existence of APIs and find relevant information about them. A key factor deciding whether an API client developer will use a particular API is the developer experience (DX) of that API. She is much more likely to start and keep using an API if the DX is good, and also recommend the API to others. Without a proper DX he/she will probably look for alternatives.
 
-### End user
+
+### <a id="end-user"></a>End user
 This is the user of the client app, and consumer of the data and functionality exposed by the API. The end user's primary concern is the stability and availability of the app, often (happily) unaware of the chain of dependencies behind.
 
 
+## <a id="api-design"></a>API Design
 
-## API Design
 
-### Design Principles
+### <a id="design-principles"></a>Design Principles
 
-#### API First
+
+#### <a id="api-first"></a>API First
 API First is one of our core API design principles. API First has two key elements:
 
 - Define the API using a standard specification language before any line of code is written
@@ -96,7 +122,8 @@ With the API first approach, we can achieve
 - Decoupling of API design and development. The API definition becomes a contract that teams can work on without having to wait for the implementation to be completed. And the implementation can be changed / replaced without impacting the clients.
 - Specifying APIs with a standard specification language facilitates usage of tools for generating documentation, mock code, automatic quality checks, API Management tools, etc.
 
-#### API As a Product
+
+#### <a id="api-as-a-product"></a>API As a Product
 A key factor to enable the evolution of an API platform is treating our APIs as products.
 
 Key elements in the API as a product principle:
@@ -106,7 +133,8 @@ Key elements in the API as a product principle:
 - Improve the product/API over time
 - Make use of customer feedback
 
-#### Be prepared to externalize
+
+#### <a id="externalize"></a>Be prepared to externalize
 Assuming your API will forever remain within the current scope can limit the potential of the API. In many cases APIs are initially developed for a particular client. Because there is (currently) only one client, API developers might be tempted to lower the standards for the API, and go easy on design, specification, documentation, etc. Then, when other parties are interested, there might be a backlog of things to improve before new clients can start consuming. Similarly, with a particular client in mind, the API could easily be designed with unnecessary optimizations making it less suited for other clients.
 
 With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening an app-private API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
@@ -114,13 +142,13 @@ With the rate of change in our industry, assumptions about scope and visibility 
 APIs should only be _app-private_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being private (and visible to everyone in the company). 
 
 
-### Consistency
+### <a id="consistency"></a>Consistency
 To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. [REST](#rest) is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference.
 
 Other protocols like AMQP, MQTT and GraphQL may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our [API portal](#api-portal) & [API gateway](#api-gateway), and are best suited for app-private APIs.
 
 
-### <a name="rest"></a>REST
+### <a id="rest"></a>REST
 
 REST in the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a brief explanation of the concept of REST.
 
@@ -134,7 +162,7 @@ APIs should be created with a minimum of [REST maturity level 2](http://martinfo
 All RESTful APIs should be specified with [OpenAPI specification](https://swagger.io/specification/).
 
 
-### <a name="opc-ua"></a>OPC UA
+### <a id="opc-ua"></a>OPC UA
 [OPC](https://opcfoundation.org/about/what-is-opc/) Unified Architecture ([OPC UA](https://opcfoundation.org/about/opc-technologies/opc-ua/) / IEC 62541) is an open interoperability standard for secure and reliable exchange of data in industrial automation / OT.  The standard defines interface that includes access to real-time data, monitoring of alarms and events, access to historical data and other applications.
 
 OPC UA is the preferred connectivity framework within industrial automation in Equinor, and will also be used to connect and integrate industrial automation and control systems (OT) with enterprise systems, business processes and analytics (IT).
@@ -144,10 +172,10 @@ Further readings:
 - [OPA UA explained in 1 minute (movie)](https://www.youtube.com/watch?v=-tDGzwsBokY)
 - [Industrial Internet Vocabulary](https://www.iiconsortium.org/vocab/index.htm)
 
-## Appendix
-### <a name="api-categories"></a>API Categories
-In this document we distinguish between 4 API categories
 
+## <a id="appendix"></a>Appendix
+### <a id="api-categories"></a>API Categories
+In this document we distinguish between 4 API categories
 
 | Term | Description |
 | :--- | :--- |
@@ -156,7 +184,8 @@ In this document we distinguish between 4 API categories
 | Partner | Partner APIs are available to selected business partners |
 | Public | Public APIs are publicly available on the Internet |
 
-### <a name="what-is-rest"></a>What is REST?
+
+### <a id="what-is-rest"></a>What is REST?
 Representational state transfer (REST) is an architecture style for web APIs, defined by Roy Fielding in year 2000 in his [doctoral dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm). REST defines a set of architectural constraints, as listed below. APIs operating within these constraints are called RESTful APIs.
 
 - [Client-server architecture](https://en.wikipedia.org/wiki/Representational_state_transfer#Client-server_architecture)
@@ -180,12 +209,13 @@ Further reading on REST:
 - [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
 
 
-## References & useful links
+## <a id="references"></a>References & useful links
 
 ### OpenAPI Specification
 - [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/)
 - [OpenAPI Specification - Web Page](https://swagger.io/specification/)
 - [OpenAPI Specification Mind Map](https://openapi-map.apihandyman.io/)
+
 
 ### Publications & guidelines
 - [Roy Fielding Dissertation - Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
@@ -193,8 +223,8 @@ Further reading on REST:
 - [Zalando API Guidelines](https://opensource.zalando.com/restful-api-guidelines)
 - [OMNIA API](https://docs.omnia.equinor.com/ocd/apim/)
 
+
 ### Blogs & blog posts
 - [Nordic APIs](https://nordicapis.com/)
 - [API Evangelist](http://apievangelist.com/)
 - [API Design - The guidelines (Hacker Noon)](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)
-
