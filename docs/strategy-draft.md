@@ -93,11 +93,11 @@ The figure above also describes the interaction between API management tools and
 
 
 ### <a id="api-developer"></a>API developer
-The API developer creates the API on top of a backend system, and mange the API through its lifecycle. The API developer deploys the API to the API Gateway and API Portal. The API developer is responsible for ensuring that the API is well crafted, secure and properly documented.  Other things the API developer needs to consider; versioning strategy, should an SLA and/or Terms of Service be created, how to receive feedback from API client developers, etc.
+The API developer creates the API on top of a backend system, and mange the API through its lifecycle. The API developer publishes the API to the API Gateway and API Portal, and is is responsible for ensuring that the API is well crafted, secure and properly documented. He/she also needs to consider topics like versioning strategy, should an SLA and/or Terms of Service be created, how to receive feedback from API client developers, etc.
 
 
 ### <a id="api-client-developer"></a>API client developer
-This is the developer of an App that consumes the API. The API client developer will use the API portal to discover the existence of APIs and find relevant information about them. A key factor deciding whether an API client developer will use a particular API is the developer experience (DX) of that API. She is much more likely to start and keep using an API if the DX is good, and also recommend the API to others. Without a proper DX he/she will probably look for alternatives.
+This is the developer of an app that consumes the API. The API client developer will use the API portal to discover the existence of APIs and find relevant information about them. A key factor deciding whether an API client developer will use a particular API is the developer experience (DX) of that API. He/she is much more likely to start and keep using an API if the DX is good, and also recommend the API to others. Without a proper DX the API client developer will probably look for alternatives.
 
 
 ### <a id="end-user"></a>End user
@@ -150,7 +150,7 @@ Other protocols like AMQP, MQTT and GraphQL may be used when they bring signific
 
 ### <a id="rest"></a>REST
 
-REST in the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a brief explanation of the concept of REST.
+REST in the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a (brief) explanation of the concept of REST.
 
 APIs should be created with a minimum of [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2). In essence, maturity level 2 means:
 
@@ -205,6 +205,7 @@ Note that maturity level 2 is not strictly "RESTful" according to Fielding's def
 
 Further reading on REST:
 
+- [REST API Tutorial](https://www.restapitutorial.com/)
 - [Microsoft Azure REST design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
 - [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
 
@@ -217,14 +218,18 @@ Further reading on REST:
 - [OpenAPI Specification Mind Map](https://openapi-map.apihandyman.io/)
 
 
-### Publications & guidelines
+### Publications, articles & guidelines
 - [Roy Fielding Dissertation - Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+- [REST API Tutorial](https://www.restapitutorial.com/)
 - [Microsoft Azure REST design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
 - [Zalando API Guidelines](https://opensource.zalando.com/restful-api-guidelines)
-- [OMNIA API](https://docs.omnia.equinor.com/ocd/apim/)
+- [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html)
+- [Microservice Architecture Principles](https://martinfowler.com/articles/microservices.html)
+- [OPC UA](https://opcfoundation.org/about/opc-technologies/opc-ua/)
 
 
 ### Blogs & blog posts
 - [Nordic APIs](https://nordicapis.com/)
 - [API Evangelist](http://apievangelist.com/)
 - [API Design - The guidelines (Hacker Noon)](https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9)
+- [Blog post: 8 Tips For Designing Quality REST APIs](https://nordicapis.com/8-tips-for-designing-quality-rest-apis/)
