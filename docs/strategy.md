@@ -186,7 +186,7 @@ In this document we distinguish between 4 API categories
 
 
 ### <a id="what-is-rest"></a>What is REST?
-Representational state transfer (REST) is an architecture style for web APIs, defined by Roy Fielding in year 2000 in his [doctoral dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm). REST defines a set of architectural constraints, as listed below. APIs operating within these constraints are called RESTful APIs.
+Representational state transfer (REST) is the architecture style for the Web, defined by Roy Fielding in year 2000 in his [doctoral dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm). REST defines a set of architectural constraints, as listed below. APIs supporting an architecture within these constraints are called RESTful APIs.
 
 - [Client-server architecture](https://en.wikipedia.org/wiki/Representational_state_transfer#Client-server_architecture)
 - [Statelessness](https://en.wikipedia.org/wiki/Representational_state_transfer#Statelessness)
@@ -195,13 +195,20 @@ Representational state transfer (REST) is an architecture style for web APIs, de
 - [Layered system](https://en.wikipedia.org/wiki/Representational_state_transfer#Layered_system)
 - [Code on demand (optional)](https://en.wikipedia.org/wiki/Representational_state_transfer#Code_on_demand_(optional))
 
-The REST constraints does not contain technical specifications, like transport protocol, data formats, etc. Consequently, there is no official technical standard for RESTful APIs. However, since its creation in 2000, industry standard conventions have emerged, particularly regarding the usage of HTTP.
+The REST constraints do not contain technical specifications, like transport protocol, data formats, etc. Consequently, there is no official technical standard for RESTful APIs.
 
-Although Roy Fielding emphasizes that APIs need to adhere to _all_ of the REST constraints to be called RESTful, few actually do so. Particularly the concept of "Hypermedia as the engine of application state" (HATEOAS), which is part of the "Uniform interface" constraint, is rarely implemented. This principle is somewhat controversial, and seen by many as adding complexity without giving real value (e.g. [Why I Hate HATEOAS](https://jeffknupp.com/blog/2014/06/03/why-i-hate-hateoas/)). 
+However, industry conventions have emerged regarding how to structure APIs using Web technology, particularly regarding the proper usage of HTTP. It is important to remember that this has relatively little to do with the stated goals of REST as an architecture style. Since most API developers aren't trying to recreate or extend Web standards, many of the facets of these constraints are not releveant in special purpose API development.
 
-The lack of a precise definition and the lack of consensus around the HATEOAS principle can be a source of confusion. Fortunately, the [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) brings clarity by breaking down the principles of REST and taking the industry conventions into account. [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2) has become the de facto standard for RESTful APIs. 
+As an example "Hypermedia as the engine of application state" (HATEOAS), which is part of the "Uniform interface" constraint, simply describes how the state of a web browser is completely driven by HTML and HTTP metadata, with absolutely no preconceived notions beyond these standards. This rarely makes any sense in general purpose API design, but easily leads to confusion when trying to interpret in a context where it makes no sense (i.e. most contexts).
 
-Note that maturity level 2 is not strictly "RESTful" according to Fielding's definition, but we use this term for level 2 APIs as this is common practice in the industry.
+The [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) is used to break down the industry conventions surrounding RESTful API development.
+
+ - Maturity level 0: Tunneling any communication through HTTP without regard for the standard
+ - Maturity level 1: splitting the API into meaningful resources, using the HTTP Request-URI field to identify them
+ - Maturity level 2: taking care to use the HTTP protocol verbs, status codes, status messages and all metadata fields as far as makes sense for your application. This level has become the de facto standard for RESTful APIs. 
+ - Maturity level 3: This level is supposed to be RESTful, meaning you are probably simply making a web page. Some APIs borrow elements from this level, like using URIs to identify resources in the data formats of the API.
+
+Note again that maturity level 2 is not strictly "RESTful" according to Fielding's definition, but we use this term for level 2 APIs as this is common practice in the industry.
 
 Further reading on REST:
 
