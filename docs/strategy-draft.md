@@ -1,4 +1,4 @@
-# Equinor API Strategy - DRAFT
+# Equinor API Strategy
 
 ## Introduction
 Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services. These interfaces enables the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation, faster development of digital products and new business models. This can positively affect the profitability of the company, a concept referred to in the industry as _the API Economy_. 
