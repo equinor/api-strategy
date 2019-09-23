@@ -6,7 +6,7 @@ With the latest version of TR1621 (v7), Equinor is heading in an "API first" dir
 
 
 ## Documents
-* [Draft Strategy Document](docs/strategy-draft.md)
+* [Strategy Document](docs/strategy.md)
 * [Mandate](docs/mandate.md)
 * [API Management](docs/api_management.md)
 * [Naming things](docs/naming.md)
