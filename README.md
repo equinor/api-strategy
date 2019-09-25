@@ -6,10 +6,12 @@ With the latest version of TR1621 (v7), Equinor is heading in an "API first" dir
 
 
 ## Documents
-* [Strategy Document](docs/strategy.md)
-* [Mandate](docs/mandate.md)
+* [API Strategy](docs/strategy.md)
+* [Naming conventions and guidelines](docs/naming.md)
+* [API Management tool decision](docs/api_mgmt_decision.md)
 * [API Management](docs/api_management.md)
-* [Naming things](docs/naming.md)
+* [Mandate](docs/mandate.md)
+
 
 ## Contributing
 To contribute to this repository, please see the [contribution guidelines](CONTRIBUTING.md).
