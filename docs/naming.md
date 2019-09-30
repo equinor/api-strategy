@@ -2,7 +2,7 @@
 
 ## Context
 
-These guidlines and conventions are exactly that: guidelines, not rules.
+These guidelines and conventions are exactly that: guidelines, not rules.
 
 ## Guidelines
 
