@@ -1,7 +1,7 @@
 # Equinor API Strategy [![Attribution-ShareAlike 4.0 International](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Introduction
-Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services. These interfaces enables the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation, faster development of digital products and new business models. This can positively affect the profitability of the company, a concept referred to in the industry as _the API Economy_. 
+Application programming interfaces (APIs) are a core element of any digital business platform. APIs provide the interfaces between apps, data and services. These interfaces enable the connection between people, businesses and things. With proper management, APIs can be an enabler for innovation, faster development of digital products and new business models. This can positively affect the profitability of the company, a concept referred to in the industry as _the API Economy_. 
 
 With the latest version of TR1621 (v7), Equinor is heading in an "API first" direction; software components should offer APIs to communicate with other components, share data and functionality. To further capitalize on the potentials of the API Economy, Equinor is establishing an API Strategy. The API strategy outlines the direction for management, design and development of APIs in Equinor.
 
@@ -49,7 +49,7 @@ To reach the goals of the API Strategy, Equinor will establish an **API platform
 
 - **Well crafted, secure APIs.** The APIs in the platform should be crafted according to industry standards with high emphasis on security.
 - **API discoverability.** Which APIs exists in the platform and what capabilities they have should be easy to discover for API consumers.
-- **Developer experience (DX).** The user experience for developers (a.k.a. developer experience) that develops API clients is key for adoption of the APIs. A good DX requires a well designed APIs, API documentation, self-service based access, useful error messages, predictability in operations, etc.
+- **Developer experience (DX).** The user experience for developers (a.k.a. developer experience) that develop API clients is key for adoption of the APIs. A good DX requires well designed APIs, API documentation, self-service based access, useful error messages, predictability in operations, etc.
 
 
 ## <a id="api-management"></a>API Management Tools and roles
@@ -93,7 +93,7 @@ The figure above also describes the interaction between API management tools and
 
 
 ### <a id="api-developer"></a>API developer
-The API developer creates the API on top of a backend system, and mange the API through its lifecycle. The API developer publishes the API to the API Gateway and API Portal, and is is responsible for ensuring that the API is well crafted, secure and properly documented. He/she also needs to consider topics like versioning strategy, should an SLA and/or Terms of Service be created, how to receive feedback from API client developers, etc.
+The API developer creates the API on top of a backend system, and manage the API through its lifecycle. The API developer publishes the API to the API Gateway and API Portal, and is responsible for ensuring that the API is well crafted, secure and properly documented. He/she also needs to consider topics like versioning strategy, should an SLA and/or Terms of Service be created, how to receive feedback from API client developers, etc.
 
 
 ### <a id="api-client-developer"></a>API client developer
@@ -129,7 +129,7 @@ A key factor to enable the evolution of an API platform is treating our APIs as 
 Key elements in the API as a product principle:
 
 - Focus on the users - your customers. Put yourself in their place, understand their needs
-- Put emphasize in the user experience (developer experience) - usability, simplicity, etc. Take care not exposing any inner workings, implementation details, or internal naming schemes in the API
+- Put emphasis on the user experience (developer experience) - usability, simplicity, etc. Take care not exposing any inner workings, implementation details, or internal naming schemes in the API
 - Improve the product/API over time
 - Make use of customer feedback
 
@@ -150,7 +150,7 @@ Other protocols like AMQP, MQTT and GraphQL may be used when they bring signific
 
 ### <a id="rest"></a>REST
 
-REST in the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a (brief) explanation of the concept of REST.
+REST is the preferred API style in Equinor. See the [What is REST?](#what-is-rest) section in the Appendix for a (brief) explanation of the concept of REST.
 
 APIs should be created with a minimum of [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2). In essence, maturity level 2 means:
 
