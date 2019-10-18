@@ -158,6 +158,7 @@ APIs should be created with a minimum of [REST maturity level 2](http://martinfo
 - APIs are modeled around resources (not actions). A resource is a part of the application's domain model.
 - Use HTTP actions (GET, PUT, POST, DELETE, etc). Verbs in URLs are not allowed.
 - Use standard HTTP status codes
+- Exchange problem details in standardized ways ([IETF HTTP API RFC 7807](https://tools.ietf.org/html/rfc7807))
 
 All RESTful APIs should be specified with [OpenAPI specification](https://swagger.io/specification/).
 
