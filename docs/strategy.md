@@ -21,7 +21,7 @@ This document distinguish between 4 categories of APIs, based on target audience
 * [API Design](#api-design)
     * [Design Principles](#design-principles)
         * [API First](#api-first)
-        * [API AS a Product](#api-as-a-product)
+        * [API As a Product](#api-as-a-product)
         * [Be prepared to externalize](#externalize)
     * [Consistency](#consistency)
     * [REST](#rest)
