@@ -26,6 +26,7 @@ This document distinguish between 4 categories of APIs, based on target audience
     * [Consistency](#consistency)
     * [REST](#rest)
     * [OPC UA](#opc-ua)
+* [API Security](#api-security)
 * [Appendix](#appendix)
     * [API Categories](#api-categories)
     * [What is REST?](#what-is-rest)
@@ -172,6 +173,39 @@ Further readings:
 - [OPA UA explained in 1 minute (movie)](https://www.youtube.com/watch?v=-tDGzwsBokY)
 - [Industrial Internet Vocabulary](https://www.iiconsortium.org/vocab/index.htm)
 
+## <a id="api-security"></a>API Security
+Equinor APIs should be crafted with high emphasis on security. Code quality is a key foundation for API security. Like other software, APIs should be built by following recognized practices for software development. Examples of such practices includes code review, test driven development (TDD), automated testing, technical debt management & refactoring, etc.
+
+### Security tools and practices
+Development teams should include practices and tools addressing security issues in their development process. Automatic vulnerability scanning and keeping dependencies updated accordingly, is strongly recommended. Scanning for vulnerabilities in open source dependencies is mandatory. Teams should stay updated on [OWASP API Security Top 10](https://github.com/OWASP/API-Security), and do regular evaluation on how these security risks are mitigated.
+
+API developers should understand and utilize the security features provided by the [API Gateway](#api-gateway), like throttling, IP restrictions and HTTP header validation.
+
+### Encrypted transport
+APIs shall use an encrypted transport mechanism to secure the API connections, ensure data integrity, preserve privacy and authenticate the providing server. Transport Layer Security (TLS) is mandatory for all HTTP-based APIs.
+
+### Input validation
+Reduce the likelihood of [injection attacks](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) by validating and sanitizing API inputs. Examples of such measures includes type and format checks, length and range checks, JSON or XML schema validation, file upload validation, etc. Validation libraries are available for most API/web development ecosystems, e.g. [Fluent Validation](https://fluentvalidation.net/), [Django Validators](https://docs.djangoproject.com/en/3.0/ref/validators/), [express-validator](https://express-validator.github.io/docs/), [Apache Commons Validator](https://commons.apache.org/proper/commons-validator/), etc.
+
+For more information, see [OWASP Input Validation Cheat Sheet](https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet).
+
+### Monitoring
+System monitoring, including monitoring of APIs, provide the capability to detect actual or attempted attacks on IT systems. Monitoring will also ensure that our systems and APIs are being used appropriately and in accordance with API usage policies. All Equinor APIs providing sensitive information shall be monitored. The monitoring should include detection of unusual behaviors, like changes in IP addresses, changes in number of requests or APIs being used at unusual times of day, etc.
+
+For more information, see [UK National Cyber Security Center Monitoring guidance](https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security/the-10-steps/monitoring)
+
+### Authentication and authorization
+The company identity provider (IdP) is the basis for for authentication and authorization of Equinor APIs. Hardcoded usernames and passwords shall be avoided. OAuth2 and Open ID Connect (OIDC) are the preferred and recommended protocols for authorization and authentication of HTTP-based APIs. 
+
+Further reading:
+
+- [The OAuth 2.0 Authorization Framework - RFC6749](https://tools.ietf.org/html/rfc6749)
+- [OpenID Connect official documentation](https://openid.net/connect/)
+- [OAuth 2.0 Threat Model and Security Considerations](https://tools.ietf.org/html/rfc6819)
+- [OAuth 2.0 Security Best Current Practice](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14)
+
+### OPC UA Security
+[OPC UA](#opc-ua) has an extensive and flexible security architecture. Recommendations and guidelines can be found in the white paper _Practical Security Recommendations for Building OPC UA Applications_, available for download from [OPC Foundation](https://opcfoundation.org/security/).
 
 ## <a id="appendix"></a>Appendix
 ### <a id="api-categories"></a>API Categories
