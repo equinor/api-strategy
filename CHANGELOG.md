@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1 - March 9, 2020
+## 1.1 - March 10, 2020
 
 * API Security section in strategy document
   * Security tools and practices
