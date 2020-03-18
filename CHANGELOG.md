@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1 - March 18, 2020
+
+* Fixed broken OWASP Input Validation Cheat Sheet link
+* Changed OWASP API Security Top 10 link to project page
+
 ## 1.1 - March 10, 2020
 
 * API Security section in strategy document
