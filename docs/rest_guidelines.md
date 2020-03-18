@@ -1,11 +1,15 @@
-# Equinor REST Guidelines
+# Equinor REST API Guidelines
 
 ## Introduction
-Introduction text...
+
+The Equinor REST API Guidelines contains the internal REST API design guidelines at Equinor. The guidelines focuses on a set of core topics, and are not intended to cover all aspects of API design. Links to other, more extensive gudelines are included in the references section.
+
+The Equinor REST API guidelines have been created with the goal of contributing to quality and consistency in Equinor APIs, which are core attributes of the [Equinor API Strategy](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md). Teams at Equinor should use this document as a baseline when defining their API standards.
+
 
 # Table Of Contents
 
-* [Open API Specification](#open-api)
+* [OpenAPI Specification](#open-api)
 * [Security](#security)
 * [Resources](#resources)
 * [Naming](#naming)
@@ -17,11 +21,20 @@ Introduction text...
 * [Data Formats](#data-formats)
 * [References](#references)
 
-## <a id="open-api"></a>Open API Specification
+## <a id="open-api"></a>OpenAPI Specification
+REST APIs should be developed [API first](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md#api-first), defined using the [OpenAPI Specification](https://swagger.io/specification/).
 
-* Guidelines for usage
-* Mandatory sections
-* Reccomendations for tools
+Use the newest version of OpenAPI that is supported by the API Gateway. This can be verified [here](https://docs.microsoft.com/en-us/azure/api-management/api-management-api-import-restrictions).
+
+The [`info`](https://swagger.io/specification/#infoObject) object should be extensively populated to provide clarity for API client developers. Always include `description` and `contact` information, and include `termsOfService` and `license` information when this exists. 
+
+### OpenAPI tools
+There are a number of tools available for working with OpenAPI specifications. The list below contains a few examples. For an extensive list of available toolins, see [OpenAPI.Tools](https://openapi.tools/).
+
+  * [Swagger Editor online](https://swagger.io/tools/swagger-editor/)
+  * [VS Code OpenAPI extension](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
+
+
 
 ## <a id="resources"></a>Resources
 
