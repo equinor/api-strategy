@@ -177,7 +177,7 @@ Further readings:
 Equinor APIs should be crafted with high emphasis on security. Code quality is a key foundation for API security. Like other software, APIs should be built by following recognized practices for software development. Examples of such practices includes code review, test driven development (TDD), automated testing, technical debt management & refactoring, etc.
 
 ### Security tools and practices
-Development teams should include practices and tools addressing security issues in their development process. Automatic vulnerability scanning and keeping dependencies updated accordingly, is strongly recommended. Scanning for vulnerabilities in open source dependencies is mandatory. Teams should stay updated on [OWASP API Security Top 10](https://github.com/OWASP/API-Security), and do regular evaluation on how these security risks are mitigated.
+Development teams should include practices and tools addressing security issues in their development process. Automatic vulnerability scanning and keeping dependencies updated accordingly, is strongly recommended. Scanning for vulnerabilities in open source dependencies is mandatory. Teams should stay updated on [OWASP API Security Top 10](https://owasp.org/www-project-api-security/), and do regular evaluation on how these security risks are mitigated.
 
 API developers should understand and utilize the security features provided by the [API Gateway](#api-gateway), like throttling, IP restrictions and HTTP header validation.
 
@@ -187,7 +187,7 @@ APIs shall use an encrypted transport mechanism to secure the API connections, e
 ### Input validation
 Reduce the likelihood of [injection attacks](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) by validating and sanitizing API inputs. Examples of such measures includes type and format checks, length and range checks, JSON or XML schema validation, file upload validation, etc. Validation libraries are available for most API/web development ecosystems, e.g. [Fluent Validation](https://fluentvalidation.net/), [Django Validators](https://docs.djangoproject.com/en/3.0/ref/validators/), [express-validator](https://express-validator.github.io/docs/), [Apache Commons Validator](https://commons.apache.org/proper/commons-validator/), etc.
 
-For more information, see [OWASP Input Validation Cheat Sheet](https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet).
+For more information, see [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html).
 
 ### Monitoring
 System monitoring, including monitoring of APIs, provide the capability to detect actual or attempted attacks on IT systems. Monitoring will also ensure that our systems and APIs are being used appropriately and in accordance with API usage policies. All Equinor APIs providing sensitive information shall be monitored. The monitoring should include detection of unusual behaviors, like changes in IP addresses, changes in number of requests or APIs being used at unusual times of day, etc.
