@@ -18,6 +18,7 @@ The guidelines are focused on a set of core topics, and are not intended to cove
 * [Data Formats](#data-formats)
 * [Naming](#naming)
 * [Versioning](#versioning)
+* [Deprecation & Sunset](#deprecation)
 * [References](#references)
 * [Appendix](#appendix)
 
@@ -150,7 +151,7 @@ Further reading:
 - [Troy Hunt - Your API versioning is wrong...](https://www.troyhunt.com/your-api-versioning-is-wrong-which-is/)
 
 
-### API Evolution (no versioning)
+### <a id="api-evolution"></a>API Evolution (no versioning)
 
 API Evolution is the concept of striving to not make breaking changes to the API until there are absolutely no other options. This could imply building converter and adapter logic that will require a considerable effort from the development team (but still easier to handle than the complexities of versioning). 
 
@@ -175,6 +176,21 @@ With URI versioning, the URI is no longer a unique address to the resource, but 
 Header versioning is implemented either by use of the standard `Accept` HTTP header, or by use of a custom header, e.g. `api-version`. The client specifies which version it supports using the header field, and the server responds accordingly.
 
 With header versioning, the URI serves as a unique address to the resource and it is stable over time. But header versioning comes with added complexity for clients developers, who have to figure out which versioning header to provide and which version to request. Lack of standardized way of handling missing version/accept header (return the latest or earliest supported version?) could also be a source of confusion.
+
+
+## <a id="deprecation"></a>Deprecation & Sunset
+
+At some point, API endpoints, API versions or features of an [unversioned API](#api-evolution) will need to be phased out.
+
+When planning a phase out, API developers should set a _sunset date_, which is the planned date when the endpoint/version/feature becomes unavailable. The endpoint/version/feature should be marked as _deprecated_ at the same time as the sunset date is published. A sunset date should be published at least _6 months_ in advance.
+
+All endpoints containing deprecated elements should return the [`Deprecation: <deprecation date>|"true"`](https://tools.ietf.org/html/draft-dalal-deprecation-header-02) and [`Sunset: <sunset date>`](https://tools.ietf.org/html/rfc8594) HTTP headers. 
+
+All deprecated items should be marked in the OpenAPI specification, by setting the `deprecated` field and adding a comment in the corresponding `description` field.
+
+Before the eventual shut down, API developers must monitor the API and make sure that clients have migrated away from the deprecated functionality.
+
+When an endpoint or version is no longer available, the server should return `HTTP 403: Forbidden`, with a message explaining that the endpoint/version is no longer supported. After some time, the endpoint/version should become unreachable and the server can return a standard `HTTP 404: Not Found` like for other unrecognized requests.
 
 
 ## <a id="references"></a>References
@@ -219,9 +235,5 @@ Note that maturity level 2 is not strictly "RESTful" according to Fielding's def
 * OAuth2.0 & OIDC
 * Ref to API strategy security section
 
-## <a id="deprecation"></a>Deprecation
 
-* Client & partner consent to deprecation
-* Reflection in API spec
-* Monitor usage
 
