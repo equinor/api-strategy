@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This document contains the internal REST API design guidelines at Equinor. The guidelines have been created to nurture quality and consistency in Equinor APIs, which are core attributes of the [Equinor API Strategy](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md). Teams at Equinor should use this document as a baseline when defining their API standards.
+This document contains guidelines and recommendations for REST API design at Equinor. The guidelines have been created to nurture quality and consistency in Equinor APIs, which are core attributes of the [Equinor API Strategy](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md). 
 
-The guidelines are focused on a set of core topics, and are not intended to cover all aspects of REST API design. Links to other, more extensive API guidelines are included in the [References](#references) section. References and supplementing sources of information are linked throughout the document. 
+The Equinor REST API Guidelines are focused on a set of core topics, and are not intended to cover all aspects of REST API design. Links to other, more extensive API guidelines are included in the [References](#references) section. References and supplementing sources of information are linked throughout the document. 
 
 
 ## Table Of Contents
@@ -54,8 +54,8 @@ A _resource_ is the fundamental concept of a REST API. A resource is an object w
 
 Resources are accessed by a combination of a [HTTP method](#http-method) and a resource identifier ([URI](https://en.wikipedia.org/wiki/URI)).
 
-* HTTP `GET` of `https://api.equinor.com/well-api/wells` should return a collection of wells
-* HTTP `GET` of `https://api.equinor.com/well-api/wells/{well-id}` should return a single well, with the given well id
+* `GET https://api.equinor.com/well-api/wells` should return a collection of wells
+* `GET https://api.equinor.com/well-api/wells/{well-id}` should return a single well, with the given well id
 
 A resource is similar to an object instance in an object-oriented programming language, with the main difference being that in REST the operations are limited to the standard [HTTP methods](#http-method).
 
@@ -64,11 +64,11 @@ The resource model of a REST API does not have to, and often should not, mirror 
 ### Sub-resources
 Sub-resources (i.e. nested resources) are used to express hierarchical relations in the resource model. 
 
-* HTTP `GET` of `https://api.equinor.com/well-api/wells/{well-id}/wellbores` should return a collection of wellbores belonging to the specific well
+Example: `GET https://api.equinor.com/well-api/wells/{well-id}/wellbores` should return a collection of wellbores belonging to the specific well
 
 Nested resources provides _readability_. In the example above, it is evident that the requested wellbores belongs to a specific well. Domain model relations like _aggregation_ ("belongs to") and composition ("part of") are often well suited for being expressed as hierarchical relations in the resource model. When child objects have _relative IDs_, modeling them as sub-resources is often the obvious (or only viable) solution. 
 
-Avoid many levels of nesting, as this will complicate the API and reduce the readability of the URIs. Two levels are often enough, three levels should be maximum.
+Avoid many levels of nesting, as this will complicate the API and reduce the readability of the URIs. Two levels of nesting are often enough, three levels should be maximum.
 
 Further reading: [Blog post: REST API Design Best Practices for Sub and Nested Resources](https://www.moesif.com/blog/technical/api-design/REST-API-Design-Best-Practices-for-Sub-and-Nested-Resources/)
 
@@ -129,7 +129,7 @@ Query parameters are suitable for non-hierarchical search, filter and pagination
 
 [UTF-8](https://en.wikipedia.org/wiki/UTF-8) should be used for encoding text and textual representation of data.
 
-JSON is the preferred data format for REST APIs. Other formats like XML, WITSML, etc can be used if this give a clear benefit.
+JSON is the preferred data format for REST APIs. Other formats like XML, WITSML, etc. can be used in cases where it gives a clear benefit. Offering multiple formats should then be considered, by supporting [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).
 
 
 ## <a id="naming"></a>Naming
@@ -139,7 +139,7 @@ See [Naming conventions and guidelines](https://github.com/equinor/api-strategy/
 
 ## <a id="versioning"></a>Versioning
 
-Handling changes to APIs without breaking client integration can be a challenge. There is no industry standard approach to versioning for REST APIs. A few different approaches are common. 
+Handling changes to APIs without breaking client integration can be a challenge. There is no industry standard approach to versioning for REST APIs. The most common approaches are included in this section. 
 
 API versioning can come with a significant cost. Supporting multiple versions of the API can make development, testing, operation and evolving the API much more complex. Therefore, versioning should be avoided whenever possible, and the _API Evolution_ (no versioning) approach should be used.
 
@@ -180,7 +180,7 @@ With header versioning, the URI serves as a unique address to the resource and i
 
 ## <a id="deprecation"></a>Deprecation & Sunset
 
-At some point, API endpoints, API versions or features of an [unversioned API](#api-evolution) will need to be phased out.
+At some point, API endpoints, API versions, or features of an [unversioned API](#api-evolution) will need to be phased out.
 
 When planning a phase out, API developers should set a _sunset date_, which is the planned date when the endpoint/version/feature becomes unavailable. The endpoint/version/feature should be marked as _deprecated_ at the same time as the sunset date is published. A sunset date should be published at least _6 months_ in advance.
 
@@ -192,6 +192,7 @@ Before the eventual shut down, API developers must monitor the API and make sure
 
 When an endpoint or version is no longer available, the server should return `HTTP 403: Forbidden`, with a message explaining that the endpoint/version is no longer supported. After some time, the endpoint/version should become unreachable and the server can return a standard `HTTP 404: Not Found` like for other unrecognized requests.
 
+Further reading: [Zalando REST API Guidelines](https://opensource.zalando.com/restful-api-guidelines/#deprecation)
 
 ## <a id="references"></a>References
 
@@ -199,7 +200,7 @@ When an endpoint or version is no longer available, the server should return `HT
 
 * [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines)
 * [Microsoft Azure Web API design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-* [Zalando Restful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
+* [Zalando RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
 * [GOV.UK API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
 
 ### Publications & articles
@@ -224,16 +225,3 @@ Although Roy Fielding emphasizes that APIs need to adhere to _all_ of the REST c
 The lack of a precise definition and the lack of consensus around the HATEOAS principle can be a source of confusion. Fortunately, the [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html) brings clarity by breaking down the principles of REST and taking the industry conventions into account. [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2) has become the de facto standard for RESTful APIs. 
 
 Note that maturity level 2 is not strictly "RESTful" according to Fielding's definition, but we use this term for level 2 APIs as this is common practice in the industry.
-
-
-
-# TODO
-
-
-## <a id="security"></a>Security
-
-* OAuth2.0 & OIDC
-* Ref to API strategy security section
-
-
-
