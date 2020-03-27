@@ -9,7 +9,8 @@ The Equinor REST API Guidelines are focused on a set of core topics, and are not
 
 ## Table Of Contents
 
-* [RESTful](#rest)
+* [API Security](#security)
+* [REST](#rest)
 * [OpenAPI Specification](#open-api)
 * [Resources](#resources)
 * [HTTP Methods](#http-method)
@@ -23,6 +24,10 @@ The Equinor REST API Guidelines are focused on a set of core topics, and are not
 * [Appendix](#appendix)
 
 
+## <a id="security"></a> API Security
+API security guidelines are described in the [API Security](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md#api-security) section of the Equinor API Strategy.
+
+
 ## <a id="rest"></a>REST
 
 REST APIs should be created with a minimum of [REST maturity level 2](http://martinfowler.com/articles/richardsonMaturityModel.html#level2). In essence, maturity level 2 means:
@@ -33,6 +38,7 @@ REST APIs should be created with a minimum of [REST maturity level 2](http://mar
 - APIs respond with standard [HTTP status codes](#http-status-codes)
 
 See the [What is REST?](#what-is-rest) section in the Appendix for an explanation of the concept of REST.
+
 
 ## <a id="open-api"></a>OpenAPI Specification
 REST APIs should be developed [API first](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md#api-first), defined using the [OpenAPI Specification](https://swagger.io/specification/).
@@ -134,7 +140,7 @@ JSON is the preferred data format for REST APIs. Other formats like XML, WITSML,
 
 ## <a id="naming"></a>Naming
 
-See [Naming conventions and guidelines](https://github.com/equinor/api-strategy/blob/master/docs/naming.md).
+General naming conventions and guidelines are described in [API Strategy - Naming conventions and guidelines](https://github.com/equinor/api-strategy/blob/master/docs/naming.md).
 
 
 ## <a id="versioning"></a>Versioning
