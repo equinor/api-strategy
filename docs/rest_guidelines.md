@@ -60,17 +60,20 @@ A _resource_ is the fundamental concept of a REST API. A resource is an object w
 
 Resources are accessed by a combination of a [HTTP method](#http-method) and a resource identifier ([URI](https://en.wikipedia.org/wiki/URI)).
 
-* `GET https://api.equinor.com/well-api/wells` should return a collection of wells
-* `GET https://api.equinor.com/well-api/wells/{well-id}` should return a single well, with the given well id
+* `GET https://api.equinor.com/wells` should return a collection of wells
+* `GET https://api.equinor.com/wells/{well-id}` should return a single well, with the given well id
+*  `POST https://api.equinor.com/wells` should submit a well entity to the wells resource 
 
 A resource is similar to an object instance in an object-oriented programming language, with the main difference being that in REST the operations are limited to the standard [HTTP methods](#http-method).
+
+Resources should be named in _plural_ form (i.e. `wells` rather than `well`). Plural form makes it easier to achieve consistent naming across endpoints operating on different cardinalities. Plurality indicates that resources are regarded as collections, which conseptually makes sense (singleton resources can be seen as a collection with cardinality 1). E.g. in the examples above; the first retrives all items in the collection of wells, the second retrieves a specific well from the well collection, the third example adds a well object to the collection.
 
 The resource model of a REST API does not have to, and often should not, mirror the internal domain model of the application. It should be developed with a focus on the API client developers, as expressed in the [design principles of the API Strategy](https://github.com/equinor/api-strategy/blob/master/docs/strategy.md#design-principles).
 
 ### Sub-resources
 Sub-resources (i.e. nested resources) are used to express hierarchical relations in the resource model. 
 
-Example: `GET https://api.equinor.com/well-api/wells/{well-id}/wellbores` should return a collection of wellbores belonging to the specific well
+Example: `GET https://api.equinor.com/wells/{well-id}/wellbores` should return a collection of wellbores belonging to the specific well
 
 Nested resources provides _readability_. In the example above, it is evident that the requested wellbores belongs to a specific well. Domain model relations like _aggregation_ ("belongs to") and composition ("part of") are often well suited for being expressed as hierarchical relations in the resource model. When child objects have _relative IDs_, modeling them as sub-resources is often the obvious (or only viable) solution. 
 
@@ -85,7 +88,7 @@ Procedures, calculations, functions, etc. should be modeled as _resources_.
 | Avoid this | Instead, do something like this |
 | ---- | ---- |
 | `GET /createWell` | `POST /wells` |
-| `GET /calculatePerfectWell` | `POST /well/{well-id}/perfect-well-calculation`<br/>`PUT /well/{well-id}/perfect-well-calculation/start-calc`<br/>`GET /well/{well-id}/perfect-well-calculation/result`|
+| `GET /calculatePerfectWell` | `POST /wells/{well-id}/perfect-well-calculation`<br/>`PUT /wells/{well-id}/perfect-well-calculation/start-calc`<br/>`GET /wells/{well-id}/perfect-well-calculation/result`|
 
 
 ## <a id="http-method"></a>HTTP Methods
