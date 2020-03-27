@@ -140,6 +140,9 @@ Query parameters are suitable for non-hierarchical search, filter and pagination
 
 JSON is the preferred data format for REST APIs. Other formats like XML, WITSML, etc. can be used in cases where it gives a clear benefit. Offering multiple formats should then be considered, by supporting [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).
 
+### Date format
+
+[RFC3339](https://tools.ietf.org/html/rfc3339) with UTC is the reccommended date format.<br/> Example: `1956-02-08T12:34:56Z` = February 8th, 1956 @ 12:34:56 UTC
 
 ## <a id="naming"></a>Naming
 
