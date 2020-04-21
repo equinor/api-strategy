@@ -2,7 +2,7 @@
 
 ## 1.2 - April 22, 2020
 
-* REST API Guidelines. Main content:
+* REST API Guidelines
   * REST principles
   * OpenAPI Specification
   * Resources
@@ -12,7 +12,7 @@
   * Data Formats
   * Versioning
   * Deprecation & Sunset
-* All REST specific content removed from strategy document
+* REST specific content removed from strategy document
 
 ## 1.1.1 - March 18, 2020
 
