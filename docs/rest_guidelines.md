@@ -1,4 +1,4 @@
-# Equinor REST API Guidelines - DRAFT
+# Equinor REST API Guidelines
 
 ## Introduction
 
