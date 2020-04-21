@@ -10,10 +10,8 @@ Contributions can be proposed by submitting a pull request:
 
 - Fork the repo on GitHub
 - Clone the fork to your computer
-- Create a topic branch from the `vNext` branch
+- Create a topic branch from the `master` branch
 - Push your branch to your fork on GitHub
-- Submit a pull request from your fork to the `vNext` branch of the API Strategy repo
-
-We encourage that changes are submitted for review as early as possible, both for feedback and for avoiding merge issues.
+- Submit a pull request from your fork to the `master` branch of the API Strategy repo
 
 [issue-search]: https://github.com/equinor/api-strategy/issues
