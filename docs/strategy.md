@@ -113,15 +113,17 @@ This is the user of the client app, and consumer of the data and functionality e
 #### <a id="api-first"></a>API First
 API First is one of our core API design principles. API First has two key elements:
 
-- Define the API using a standard specification language before any line of code is written
+- Define the API using an [API specification language](#api-spec) before any line of code is written
 - Get feedback on the API definition from team members and client developers
 
 With the API first approach, we can achieve
 
 - Evolving the API and learn about it’s usage in an efficient matter, without having to write any code
-- Decoupling of API design and development. The API definition becomes a contract that teams can work on without having to wait for the implementation to be completed. And the implementation can be changed / replaced without impacting the clients.
-- Specifying APIs with a standard specification language facilitates usage of tools for generating documentation, mock code, automatic quality checks, API Management tools, etc.
+- Decoupling of API design and development. The API specification becomes a contract that teams can work on without having to wait for the implementation to be completed. And the implementation can be changed / replaced without impacting the clients.
+- Specifying APIs with an API specification language facilitates usage of tools for generating documentation and mock code, automatic quality checks, API Management, etc.
 
+
+- REST: [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/)
 
 #### <a id="api-as-a-product"></a>API As a Product
 A key factor to enable the evolution of an API platform is treating our APIs as products.
@@ -204,6 +206,12 @@ In this document we distinguish between 4 API categories
 | Partner | Partner APIs are available to selected business partners |
 | Public | Public APIs are publicly available on the Internet |
 
+
+### <a id="api-spec"></a>API Specification Languages
+
+An API specification language, a.k.a. API description language, provides a structured, machine and human readable specification of an API. It contains information like operations, data structures, types, parameter information, error and status codes, metadata, etc. Such a specifications is a tool for developers to define, discuss, evolve and get feedback on the API design, as described in the [API First](#api-first) design principle. API specifications facilitates usage of tools for generating documentation and mock code, automatic quality checks, etc.
+
+Equinor REST APIs should be specified using the [OpenAPI specification](rest_guidelines.md#open-api). 
 
 ## <a id="references"></a>References & useful links
 
