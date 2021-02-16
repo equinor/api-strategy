@@ -8,7 +8,7 @@ APIs can deliver a variety of operational and strategic benefits. For example, r
 
 Incorporating APIs into new applications could also allow for easier consumption and reuse across new web, mobile, and IoT experiences, not to mention the option for exposing those APIs externally to enable new business models and partner ecosystems.
 
-With the recently released [TR1621 v7](http://docmap.statoil.no/DocMap/page/doc/dmDocIndex.html?DOCVIEW=FALSE?DOCID=1039106), we are heading towards an "API first strategy". Meaning software components should offer APIs to communicate with other components, share data , functions etc. Regarding the abbreviation "API" - in this context it is an prescribed "expected behavior" with whatever communication protocol. The strategy will not only cover REST APIs.
+With the recently released [TR1621 v7](https://docmap.equinor.com/Docmap/page/doc/dmDocIndex.html?DOCKEYID=540095), we are heading towards an "API first strategy". Meaning software components should offer APIs to communicate with other components, share data , functions etc. Regarding the abbreviation "API" - in this context it is an prescribed "expected behavior" with whatever communication protocol. The strategy will not only cover REST APIs.
 
 To accelerate this process CIT via Chief Engineer IT, needs to establish an API strategy, policies and guidelines for development of APIs within the company.
 
