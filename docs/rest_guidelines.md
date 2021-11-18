@@ -208,10 +208,12 @@ Further reading: [Zalando REST API Guidelines](https://opensource.zalando.com/re
 
 ### API Guidelines
 
-* [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines)
-* [Microsoft Azure Web API design guidelines](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
-* [Zalando RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
-* [GOV.UK API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)
+| Document | Description |
+| -------- | ----------- |
+| [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines) | Microsoft's internal, company-wide REST API design guidelines. A long list of guidelines covering most aspects of REST API design in detail. |
+| [Microsoft Azure RESTful web API design](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design) | A readable introduction to the core concepts of REST API design. | 
+| [Zalando RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/) | An excellent and comprehensive collection of REST API guidelines. Each guideline is categorized as either `MUST`, `SHOULD` or `MAY`. 
+| [GOV.UK API technical and data standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) | A set of recommendations and guidelines covering API design, development and operations. | 
 
 ### Publications & articles
 - [Roy Fielding Dissertation - Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
