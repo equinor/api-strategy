@@ -28,7 +28,6 @@ This document distinguish between 4 categories of APIs, based on target audience
 * [API Security](#api-security)
 * [Appendix](#appendix)
     * [API Categories](#api-categories)
-    * [What is REST?](#what-is-rest)
 * [References & useful links](#references)
 
 
