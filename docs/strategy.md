@@ -162,7 +162,7 @@ Further readings:
 Equinor APIs should be crafted with high emphasis on security. Code quality is a key foundation for API security. Like other software, APIs should be built by following recognized practices for software development. Examples of such practices includes code review, test driven development (TDD), automated testing, technical debt management & refactoring, etc.
 
 ### Security tools and practices
-Development teams should include practices and tools addressing security issues in their development process. Automatic vulnerability scanning and keeping dependencies updated accordingly, is strongly recommended. Scanning for vulnerabilities in open source dependencies is mandatory. Teams should stay updated on [OWASP API Security Top 10](https://owasp.org/www-project-api-security/), and do regular evaluation on how these security risks are mitigated.
+Development teams should include practices and tools addressing security issues in their development process. Automatic vulnerability scanning and keeping dependencies updated are mandatory. Teams should stay updated on [OWASP API Security Top 10](https://owasp.org/www-project-api-security/), and do regular evaluation on how these security risks are mitigated.
 
 
 API developers should understand and utilize the security features provided by the [API Gateway](#api-gateway), like throttling, IP restrictions and HTTP header validation.
