@@ -123,7 +123,7 @@ The status codes are grouped in five classes:
 
 In total there are over 60 possible HTTP Status codes, but APIs should focus on using a limited set in a consistent manner.
 
-The most important HTTP Status codes are: 
+Commonly used HTTP Status codes are: 
 * 200 OK - The request completed successfully
 * 201 Created - The request completed successfully and one or more new resources were created
 * 204 No Content - The request completed successfully and there is no additional content in the response (commonly used for HTTP PATCH)
