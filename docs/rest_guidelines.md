@@ -127,6 +127,7 @@ Commonly used HTTP Status codes are:
 * 200 OK - The request completed successfully
 * 201 Created - The request completed successfully and one or more new resources were created
 * 204 No Content - The request completed successfully and there is no additional content in the response (commonly used for HTTP PATCH)
+* 307/308 Temporary/Permanent redirect - Redirect to other location for resource (use 307/308 in order to retain HTTP verb on redirect)
 * 400 Bad Request - The request is not compliant with the OpenAPI specification (for example missing parameters in the query string or request body invalid)
 * 403 Forbidden - User does not have sufficient authorizations
 * 404 Not Found - The resource does not exist or an non-existing endpoint has been called
