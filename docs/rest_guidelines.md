@@ -111,7 +111,7 @@ Further reading:
 
 ## <a id="http-status-codes"></a>HTTP Status codes
 
-HTTP Status codes are returned from the server in response to an HTTP request, to indicate whether the request has completed successfully. HTTP status codes should be used accurately and consistently with the semantics of the HTTP standard. 
+HTTP Status codes are returned from the server in response to an HTTP request, to indicate whether the request has completed successfully. HTTP status codes should be used accurately and consistently with the semantics of the HTTP standard. The OpenAPI specification should document all possible HTTP Status codes for each endpoint so that consumers can understand which responses they can expect.
 
 The status codes are grouped in five classes:
 
@@ -121,8 +121,23 @@ The status codes are grouped in five classes:
 * 4xx client error – the request contains bad syntax or cannot be fulfilled
 * 5xx server error – the server failed to fulfill an apparently valid request
 
-Links to status code lists:
+In total there are over 60 possible HTTP Status codes, but APIs should focus on using a limited set in a consistent manner.
 
+Commonly used HTTP Status codes are: 
+* 200 OK - The request completed successfully
+* 201 Created - The request completed successfully and one or more new resources were created
+* 204 No Content - The request completed successfully and there is no additional content in the response (commonly used for HTTP PATCH)
+* 307/308 Temporary/Permanent redirect - Redirect to other location for resource (use 307/308 in order to retain HTTP verb on redirect)
+* 400 Bad Request - The request is not compliant with the OpenAPI specification (for example missing parameters in the query string or request body invalid)
+* 403 Forbidden - User does not have sufficient authorizations
+* 404 Not Found - The resource does not exist or an non-existing endpoint has been called
+* 409 Conflict - The request cannot be completed due to conflict with resource current state
+* 500 Internal Server Error - The server failed to fulfill an apparently valid request
+* 503 Service unavailable - API or a service it depends on is temporarily unavailable
+
+
+Links to status code lists:
+* [Hypertext Transfer Protocol (HTTP) Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 * [MDN web docs - HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 * [REST API Tutorial - HTTP Status Codes](https://www.restapitutorial.com/httpstatuscodes.html)
 
