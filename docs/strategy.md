@@ -142,9 +142,9 @@ APIs should only be _app-internal_ if it contains necessary optimizations that m
 
 
 ### <a id="consistency"></a>Consistency
-To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. REST is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference. The [Equinor REST API Guidelines](rest_guidelines.md) is an accompanying document containing guidelines and recommendations specifically for REST API design.
+To facilitate API adoption and make it easier to do reviews between teams following the [API First principle](#api-first), we should strive for _consistency_ in our APIs. REST is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference. The [Equinor REST API Guidelines](rest_guidelines.md) is an accompanying document containing guidelines and recommendations specifically for REST API design.
 
-Other protocols like GraphQL, AMQP and MQTT may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our [API portal](#api-portal) & [API gateway](#api-gateway), and are best suited for app-internal APIs.
+Other protocols like GraphQL, AMQP and MQTT may be used when bringing significant benefits compared to REST. However, these protocols are not supported by the OpenAPI specification nor by our [API portal](#api-portal) & [API gateway](#api-gateway). Metadata about the API should then be published in other channels. Alternative ways of implementing security features like those provided by the API gateway should also be considered. 
 
 
 ### <a id="opc-ua"></a>OPC UA
