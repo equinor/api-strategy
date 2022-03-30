@@ -5,7 +5,7 @@ Application programming interfaces (APIs) are a core element of any digital busi
 
 With the latest version of TR1621 (v7), Equinor is heading in an "API first" direction; software components should offer APIs to communicate with other components, share data and functionality. To further capitalize on the potentials of the API Economy, Equinor is establishing an API Strategy. The API strategy outlines the direction for management, design and development of APIs in Equinor. The [Equinor REST API Guidelines](rest_guidelines.md) is an accompanying document containing guidelines and recommendations specifically for REST API design.
 
-This document distinguish between 4 categories of APIs, based on target audience; _app-private_, _private_, _partner_ and _public_. See the [Appendix](#api-categories) for a description of each category.
+This document distinguish between 4 categories of APIs, based on target audience; _app-internal_, _internal_, _partner_ and _public_. See the [Appendix](#api-categories) for a description of each category.
 
 
 # Table Of Contents
@@ -38,7 +38,7 @@ The goal of the API Strategy is to deliver a number of operational and strategic
 - **Increased efficiency in software development.** Getting access to data, often from another team or part of the organization, can be a time consuming process for development teams. In many cases, the consumers of these data need to do similar processing. By being able to reuse existing APIs providing data and processing capabilities - rather than building from scratch - development teams can develop new applications faster.
 - **Increased agility in software architecture**. By building our applications on top of APIs and applying [microservice architecture principles](https://martinfowler.com/articles/microservices.html) we can create a more agile software architecture, making our software systems more adaptable to change. An agile architecture will in turn support the business becoming more agile.
 - **Revitalize legacy applications.** Integrating with legacy applications is often difficult due to technical barriers and knowledge gaps. Consequently, these monolith's data and functionalities are often only accessible within the systems themselves. By building modern APIs on top of legacy systems, we can extract more value by making their abilities broadly and easily available. The APIs can also serve as an abstraction layer that can facilitate modularization and modernization. 
-- **Enabler for Innovation** The availability of and easy access to a broad range of data and functionality can facilitate innovation. By combining data in new ways we can potentially gain new insights and build new services that brings added value to the company. The API Platform can enable innovation internally on our private APIs, but possibly also on public APIs by external parties (without direct investment by Equinor).
+- **Enabler for Innovation** The availability of and easy access to a broad range of data and functionality can facilitate innovation. By combining data in new ways we can potentially gain new insights and build new services that brings added value to the company. The API Platform can enable innovation internally on our internal APIs, but possibly also on public APIs by external parties (without direct investment by Equinor).
 - **New business opportunities.** A number of businesses are getting significant income from the "API Economy". A common model of operation is to offer public APIs where the clients pay for consumption (as subscription or pr request). Another approach is to offer free public APIs where clients indirectly contributes to revenue by growing an existing business platform or ecosystem. Providing APIs to selected business is a third approach where new (or existing) business relationships is strengthened by API integration.
 
 
@@ -53,7 +53,7 @@ To reach the goals of the API Strategy, Equinor will establish an **API platform
 
 ## <a id="api-management"></a>API Management Tools and roles
 
-API Management tools are key to supporting a secure and effective API development process and reaching the goals of the API Strategy. The figure below describes how these tools fits into the system context of a typical private or public API, including interacting roles.
+API Management tools are key to supporting a secure and effective API development process and reaching the goals of the API Strategy. The figure below describes how these tools fits into the system context of a typical internal or public API, including interacting roles.
 
 ![alt text](images/API-C4.png "API Landscape")
 
@@ -64,10 +64,10 @@ The API Portal is the central API registry, and the main tool to achieve _API di
 Key characteristics:
 
 - Provides self service mechanisms for API client developers to gain access to APIs
-- _All_ private and public APIs shall be published in the API Portal. App-private and partner APIs may be published if needed.
+- _All_ internal and public APIs shall be published in the API Portal. App-internal and partner APIs may be published if needed.
 - Provides configurable _visibility_ of APIs
-  - App-private APIs - if listed in the API portal - should only be visible to relevant client developers
-  - Private APIs should be visible to everyone in Equinor (i.e. to all users in Equinor AD)
+  - App-internal APIs - if listed in the API portal - should only be visible to relevant client developers
+  - Internal APIs should be visible to everyone in Equinor (i.e. to all users in Equinor AD)
   - Partner APIs may have public or limited visibility, depending on the need for the particular API 
   - Public APIs should be visible to everyone internally and externally
 
@@ -136,15 +136,15 @@ Key elements in the API as a product principle:
 #### <a id="externalize"></a>Be prepared to externalize
 Assuming your API will forever remain within the current scope can limit the potential of the API. In many cases APIs are initially developed for a particular client. Because there is (currently) only one client, API developers might be tempted to lower the standards for the API, and go easy on design, specification, documentation, etc. Then, when other parties are interested, there might be a backlog of things to improve before new clients can start consuming. Similarly, with a particular client in mind, the API could easily be designed with unnecessary optimizations making it less suited for other clients.
 
-With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening an app-private API to everyone in Equinor (private), opening it to external business partners or as a public API on the Internet. 
+With the rate of change in our industry, assumptions about scope and visibility of the API might change quickly. An important principle for our API development is to _develop the APIs in such a way that it is ready to be made available outside its current scope_. This could mean opening an app-internal API to everyone in Equinor (internal), opening it to external business partners or as a public API on the Internet. 
 
-APIs should only be _app-private_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being private (and visible to everyone in the company). 
+APIs should only be _app-internal_ if it contains necessary optimizations that makes in unsuitable for other clients, or the API metadata have a security classification that prevents the API from being internal (and visible to everyone in the company). 
 
 
 ### <a id="consistency"></a>Consistency
 To facilitate API adoption and make it easier to do reviews between teams following the API First principle, we should strive for _consistency_ in our APIs. REST is the preferred API mechanism in Equinor, except for industrial automation, where [OPC UA](#opc-ua) is the preference. The [Equinor REST API Guidelines](rest_guidelines.md) is an accompanying document containing guidelines and recommendations specifically for REST API design.
 
-Other protocols like GraphQL, AMQP and MQTT may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our [API portal](#api-portal) & [API gateway](#api-gateway), and are best suited for app-private APIs.
+Other protocols like GraphQL, AMQP and MQTT may be used when they bring significant benefits. But keep in mind that these protocols are not supported by the OpenAPI specification nor by our [API portal](#api-portal) & [API gateway](#api-gateway), and are best suited for app-internal APIs.
 
 
 ### <a id="opc-ua"></a>OPC UA
@@ -198,10 +198,10 @@ In this document we distinguish between 4 API categories
 
 | Term | Description |
 | :--- | :--- |
-| App-private | app-private APIs are available to a limited set of clients, within the same functional scope. These APIs are typically optimized for a particular consumer, like a web or mobile client. app-private APIs are sometimes referred to as _application-private_ or _app-internal_ APIs.|
-| Private | Private APIs are available to clients within the company. Private APIs are sometimes referred to as _internal_ APIs. |
-| Partner | Partner APIs are available to selected business partners |
-| Public | Public APIs are publicly available on the Internet |
+| App-internal | App-internal APIs are available to a limited set of clients within the same functional scope, and are not intended for broad usage within the company. These APIs are typically optimized for a particular consumer, like a web or mobile client. App-internal APIs are sometimes referred to as _application-internal_ or _app-private_ APIs.|
+| Internal | Internal APIs are available to clients within the company. Internal APIs are sometimes referred to as _private_ APIs. |
+| Partner | Partner APIs are available to selected business partners. Partner APIs have consumers outside the company, and typically need other mechanisms for access control and client developer communication than internal and app-internal APIs.  |
+| Public | Public APIs are publicly available on the Internet. Public APIs can potentially have a high number of consumers. Access control mechanisms and and consumer communication channels need to be scalable. |
 
 
 ## <a id="references"></a>References & useful links
