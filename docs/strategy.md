@@ -26,6 +26,7 @@ This document distinguish between 4 categories of APIs, based on target audience
     * [Consistency](#consistency)
     * [OPC UA](#opc-ua)
 * [API Security](#api-security)
+* [API and Data](#api-and-data)
 * [Appendix](#appendix)
     * [API Categories](#api-categories)
 * [References & useful links](#references)
@@ -191,6 +192,10 @@ Further reading:
 
 ### OPC UA Security
 [OPC UA](#opc-ua) has an extensive and flexible security architecture. Recommendations and guidelines can be found in the white paper _Practical Security Recommendations for Building OPC UA Applications_, available for download from [OPC Foundation](https://opcfoundation.org/security/).
+
+## <a id="api-and-data"></a>API and Data
+
+Link to 
 
 ## <a id="appendix"></a>Appendix
 ### <a id="api-categories"></a>API Categories
